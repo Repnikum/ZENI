@@ -84,19 +84,27 @@
                 
               echo '
               
-              <table border="0" cellspacing="0" cellpadding="10" >
+              <table cellspacing="0" class="new">
                 <tr>
-                  <td width="200" height="200" rowspan="3">
+                  <td width="200" height="200" >
                     <img src="img/avatars/' . $row['avatar'] .'" alt="alt text" />
-                    Имя: ' . $row['name'] .' <br/>
-                    Дата регистрации: ' . $row['date'] .' <br/>
-                    Заработал на сайте: ' . $row['profit'] .' р <br/>
                   </td>
                 </tr>
-              </table> 
+                <tr>
+                  <th>Имя: </th>
+                  <td>' . $row['name'] .'</td>
+                </tr>
+                <tr>
+                  <th>Дата регистрации: </th>
+                  <td>' . $row['date'] .'</td>
+                </tr>
+                <tr>
+                  <th>Заработал на сайте: </th>
+                  <td>' . $row['profit'] .' р</td>
+                </tr>
+              </table>
               
-              <table border="0" cellspacing="0" cellpadding="10" >
-                  <tr><td width="700"><h3  class="post-heading">размещенные товары: </h2></td></tr> 
+              <table cellspacing="0" class="new">
               ';
               
               //по-новой: если этот покупатель оценивал продавца - то отображается только рейтинг
@@ -162,12 +170,25 @@
               $quer = "SELECT * FROM product WHERE seller_id = '" . $_GET['seller_id'] . "'";
               $dat = mysqli_query($dbc, $quer);
               
+              echo '<tr><th>наименование</th><th>остаток</th><th>цена</th><th>гарантия</th></tr>';
+              
+              $i = 1;
               while ($ro = mysqli_fetch_array($dat)){
+              if($i%2!=0){
               echo '
                   <tr>
-                    <td ><br/>наименование: '. $ro['name'] .'; остаток: '. $ro['residue'] .'; цена: '. $ro['cost'] .' р; гарантия: '. $ro['guarantee'] .'; <a href= "single.php?product_id=' . $ro['product_id'] . '">ссылка</a></td>
+                    <td><a href= "single.php?product_id=' . $ro['product_id'] . '">'. $ro['name'] .'</a></td><td>'. $ro['residue'] .'</td><td>'. $ro['cost'] .' р</td><td>'. $ro['guarantee'] .'</td>
                   </tr>
               ';
+              $i++;
+              } else {
+                echo '
+                  <tr class="even">
+                    <td><a href= "single.php?product_id=' . $ro['product_id'] . '">'. $ro['name'] .'</a></td><td>'. $ro['residue'] .'</td><td>'. $ro['cost'] .' р</td><td>'. $ro['guarantee'] .'</td>
+                  </tr>
+              ';
+                $i++;
+              }
               }
                 
               echo '</table>';  

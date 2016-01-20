@@ -87,7 +87,6 @@
     echo '<p class="error">' . $error_msg . '</p>';
 ?>
 
-<div id="main">	
 			<div class="wrapper">
               <h2 class="page-heading"><span>ВОЙТИ</span></h2>
   <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="commentform">

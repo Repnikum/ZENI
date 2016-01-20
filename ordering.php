@@ -12,8 +12,7 @@
     
   $query = "SELECT * FROM orders WHERE seller_id = '$sid' ORDER BY date DESC";
   $data = mysqli_query($dbc, $query);
-
-  echo '<table>';
+  echo '<table class="new">';
   echo '<tr><th>название</th><th>цена</th><th>дата</th><th>способ получения</th><th>действие</th></tr>';
     
   while ($row = mysqli_fetch_array($data)) { 
@@ -40,7 +39,7 @@
 
   mysqli_close($dbc);
     
-  echo '<h2 class="post-heading"><span>архив заказов</span></h2><br/>';
+  echo '<h2 class="post-heading"><span>архив</span></h2><br/>';
     
   require_once('appvars.php');
   require_once('connectvars.php');
@@ -52,7 +51,7 @@
   $query = "SELECT * FROM orders WHERE seller_id = '$sid' ORDER BY date DESC";
   $data = mysqli_query($dbc, $query);
 
-  echo '<table>';
+  echo '<table class="new">';
   echo '<tr><th>название</th><th>цена</th><th>дата</th><th>способ получения</th><th>действие</th></tr>';
     
   while ($row = mysqli_fetch_array($data)) { 

@@ -119,7 +119,7 @@ if (isset($_POST['submit'])) {
             <div class="wrapper">
               <h2 class="home-block-heading"><span>ЗАКАЗ ТОВАРА</span></h2> ';
     
-    echo '<table>';
+    echo '<table class="new">';
     if (!empty($row['name'])) {
       echo '<tr><td class="label">Название:</td><td>' . $row['name'] . '</td></tr>';
     }
@@ -133,16 +133,14 @@ if (isset($_POST['submit'])) {
       echo '<tr><td class="label">Гарантия:</td><td>' . $row['guarantee'] . '</td></tr>';
     }
     if (!empty($row['picture'])) {
-      echo '<tr><td class="label">Фото:</td><td><img src="' . GW_UPLOADPATH . $row['picture'] .
-        '" alt="Profile Picture" /></td></tr>';
+      echo '<tr><td></td><td><img src="' . GW_UPLOADPATH . $row['picture'] .
+        '" alt="Profile Picture" width="431" height="273"/></td></tr>';
     }
     echo '</table>';
     
-    
-    
     ?>
 
-    <form enctype="multipart/form-data" method="post" action="<?php echo $server; ?>">  
+    <form enctype="multipart/form-data" method="post" action="<?php echo $server; ?>" id="commentform">  
     
     <fieldset>
       <legend>Данные о заказе</legend>
@@ -179,6 +177,7 @@ if (isset($_POST['submit'])) {
           <label for="email">Email</label>
        ';    
         }
+        
       ?>  
     </fieldset>
     <input type="submit" value="заказать" name="submit" />

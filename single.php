@@ -136,16 +136,13 @@
                       
                       } 
                       else { echo '<h2  class="post-heading">'. $row['name'] .'</h2>'; }
+                      
+                    echo '<table class="new">';
                           
-					echo '<div class="post-content">Техническое описание: '. $row['description'] .'
-						</div>
-                      
-                        <div class="post-content">Гарантия: '. $row['guarantee'] .'
-						</div>
-                      
-                        <div class="post-content">Цена: '. $row['cost'] .' Р
-						</div>';
-                      
+					echo '<tr><th>Техническое описание: </th><td> '. $row['description'] .' </td></tr>
+                          <tr><th>Гарантия: </th><td> '. $row['guarantee'] .' </td></tr>
+                          <tr><th>Цена: </th><td> '. $row['cost'] .' Р </td></tr>
+						</div></table>';
                          
                       ?>
                       

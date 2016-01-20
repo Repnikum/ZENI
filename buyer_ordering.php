@@ -18,7 +18,7 @@
   $row_user = mysqli_fetch_array($data_user);
   $balance = $row_user['balance'];
 
-  echo '<table>';
+  echo '<table class="new">';
   echo '<tr><th>название</th><th>цена</th><th>дата</th><th>способ получения</th><th>статус</th><th>оплата</th><th>отмена заказа</th></tr>';
     
   while ($row = mysqli_fetch_array($data)) {

@@ -8,7 +8,7 @@
 
   // Loop through the array of score data, formatting it as HTML 
   echo '<div class="wrapper clearfix"><h2 class="page-heading"><span>УДАЛЕНИЕ ТОВАРА</span></h2>  ';
-  echo '<table>';
+  echo '<table class="new">';
   echo '<tr><th>наименование</th><th>остаток</th><th>описание</th><th>цена</th><th>гарантия</th><th>действие</th></tr>';
   while ($row = mysqli_fetch_array($data)) { 
     // Display the score data

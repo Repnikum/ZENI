@@ -43,9 +43,6 @@
 		<script  src="js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
 		<!-- ENDS poshytip -->
 		
-		<!-- GOOGLE FONTS -->
-		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300' rel='stylesheet' type='text/css'>
-		
 		<!-- Flex Slider -->
 		<link rel="stylesheet" href="css/flexslider.css" >
 		<script src="js/jquery.flexslider-min.js"></script>

@@ -42,9 +42,6 @@
 		<script  src="js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
 		<!-- ENDS poshytip -->
 		
-		<!-- GOOGLE FONTS -->
-		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300' rel='stylesheet' type='text/css'>
-		
 		<!-- Flex Slider -->
 		<link rel="stylesheet" href="css/flexslider.css" >
 		<script src="js/jquery.flexslider-min.js"></script>
@@ -86,9 +83,9 @@
               
               <table cellspacing="0" class="lef">
                 <tr>
-                  <td width="200" height="200" >
+                  <th width="200" height="200" >
                     <img src="img/avatars/' . $row['avatar'] .'" alt="alt text" />
-                  </td>
+                  </th>
                 </tr>
                 <tr>
                   <th>Имя: </th>

@@ -137,7 +137,7 @@
                       } 
                       else { echo '<h2  class="post-heading">'. $row['name'] .'</h2>'; }
                       
-                    echo '<table class="new">';
+                    echo '<table class="info">';
                           
 					echo '<tr><th>Техническое описание: </th><td> '. $row['description'] .' </td></tr>
                           <tr><th>Гарантия: </th><td> '. $row['guarantee'] .' </td></tr>

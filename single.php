@@ -266,11 +266,9 @@
 	        		<em id="corner"></em>
 	        	</aside>
 				<!-- ENDS sidebar -->
-	        	
-			</div>
-		</div>
-		<!-- ENDS MAIN -->
 		
+          </div>
+		<!-- ENDS MAIN -->
 		
 		<footer>
 			<div class="wrapper">

@@ -113,25 +113,34 @@
                     }
                     else if (isset($order_id) && isset($name) && isset($description) && isset($cost) && isset($date)) {
                       echo '<p>Вы уверены, что хотите удалить заказ №' . $order_id . ' ?</p>';
-                      echo '<p><strong>Название: </strong>' . $name . '<br /><strong>Описание: </strong>' . $description .
-                        '<br /><strong>Цена: </strong>' . $cost . '<br /><strong>Дата: </strong>' . $date .
-                        '</p>';
+                      echo '<table class="lef">
+                      <tr>
+                        <th>Название: </th>
+                        <td>' . $name . '</td>
+                      </tr>
+                      <tr>
+                        <th>Описание: </th>
+                        <td>' . $description . '</td>
+                      </tr>
+                      <tr>
+                        <th>Цена: </th>
+                        <td>' . $cost . '</td>
+                      </tr>
+                      <tr>
+                        <th>Дата: </th>
+                        <td>' . $date . '</td>
+                      </tr>
+                      <tr><th colspan="2">';
 
                       echo '<form method="post" action="buyer_orderremove.php?order_id=' . $order_id .  '&amp;name='. $name .  '&amp;product_id='. $product_id .'">';    
                       echo '<input type="radio" name="confirm" value="Yes" /> Да ';
                       echo '<input type="radio" name="confirm" value="No" checked="checked" /> Нет <br />';
-
                       echo '<input type="submit" value="подтвердить" name="submit" />';
-
-                      echo '</form>';
+                      echo '</form></th></tr></table>';
                     }
 
-                    echo '<p><a href="basket.php">&lt;&lt; Вернуться в корзину</a></p>';
+                    echo '<br /><p><a href="basket.php">&lt;&lt; Вернуться в корзину</a></p>';
                   ?>
-
-                  </div>
-                  </div>
-		              
 		<footer>
 			<div class="wrapper">
 			

@@ -110,22 +110,31 @@
                         // Confirm success with the user
                         echo '<div id="main"><div class="wrapper clearfix">';
                         echo '<p>Товар ' . $name .  ' был успешно удалён.';
-                        echo '</div></div>';
                       }
                       else {
                         echo '<div id="main"><div class="wrapper clearfix">';
                         echo '<p class="error">Товар не был удалён.</p>';
                         echo '<p><a href="administration.php">&lt;&lt; Вернуться на страницу администратора</a></p>';
-                        echo '</div></div>';
                       }
                     }
                     else if (isset($product_id) && isset($name) && isset($description) && isset($cost) && isset($guarantee)) {
                       
                       echo '<div id="main"><div class="wrapper clearfix">';
                       echo '<p>Вы уверены, что хотите удалить товар?</p>';
-                      echo '<p><strong>Название: </strong>' . $name . '<br /><strong>Описание: </strong>' . $description .
-                        '<br /><strong>Цена: </strong>' . $cost . '<br /><strong>Гарантия: </strong>' . $guarantee .
-                        '</p>';
+                      echo '<table class="lef">
+                      <tr>
+                        <th>Название: </th>
+                        <td>' . $name . '</td>
+                      </tr>
+                      <tr>
+                        <th>Описание: </th>
+                        <td>' . $description . '</td>
+                      </tr>
+                      <tr>
+                        <th>Цена: </th>
+                        <td>' . $cost . '</td>
+                      </tr>
+                      <tr><th colspan="2">';
                       echo '<form method="post" action="removescore.php">';
                       echo '<input type="radio" name="confirm" value="Yes" /> Да ';
                       echo '<input type="radio" name="confirm" value="No" checked="checked" /> Нет <br />';
@@ -133,9 +142,8 @@
                       echo '<input type="hidden" name="id" value="' . $product_id . '" />';
                       echo '<input type="hidden" name="name" value="' . $name . '" />';
                       echo '<input type="hidden" name="score" value="' . $cost . '" />';
-                      echo '</form>';
+                      echo '</form></th></tr></table>';
                       echo '<br/><p><a href="administration.php">&lt;&lt; Вернуться на страницу администратора</a></p>';
-                      echo '</div></div>';
                     }
 ?>
 		              

@@ -119,24 +119,24 @@ if (isset($_POST['submit'])) {
             <div class="wrapper">
               <h2 class="home-block-heading"><span>ЗАКАЗ ТОВАРА</span></h2> ';
     
-    echo '<table class="new">';
+    echo '<table class="lef">';
     if (!empty($row['name'])) {
-      echo '<tr><td class="label">Название:</td><td>' . $row['name'] . '</td></tr>';
+      echo '<tr><th>Название:</th><td>' . $row['name'] . '</td></tr>';
     }
     if (!empty($row['description'])) {
-      echo '<tr><td class="label">Описание:</td><td>' . $row['description'] . '</td></tr>';
+      echo '<tr><th>Описание:</th><td>' . $row['description'] . '</td></tr>';
     }
     if (!empty($row['cost'])) {
-      echo '<tr><td class="label">Цена:</td><td>' . $row['cost'] . '</td></tr>';
+      echo '<tr><th>Цена:</th><td>' . $row['cost'] . '</td></tr>';
     }
     if (!empty($row['guarantee'])) {
-      echo '<tr><td class="label">Гарантия:</td><td>' . $row['guarantee'] . '</td></tr>';
+      echo '<tr><th>Гарантия:</th><td>' . $row['guarantee'] . '</td></tr>';
     }
     if (!empty($row['picture'])) {
-      echo '<tr><td></td><td><img src="' . GW_UPLOADPATH . $row['picture'] .
-        '" alt="Profile Picture" width="431" height="273"/></td></tr>';
+      echo '<tr><th colspan="2" class="pic"><img src="' . GW_UPLOADPATH . $row['picture'] .
+        '" alt="Profile Picture" width="431" height="273"/></th></tr>';
     }
-    echo '</table>';
+    echo '<tr><th colspan="2">';
     
     ?>
 
@@ -181,7 +181,7 @@ if (isset($_POST['submit'])) {
       ?>  
     </fieldset>
     <input type="submit" value="заказать" name="submit" />
-  </form>
+  </form></th></tr></table>
       
     <?php
     

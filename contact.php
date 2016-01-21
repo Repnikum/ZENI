@@ -164,11 +164,7 @@
 		        	<div class="clearfix"></div>
 					<!-- ENDS contact-sidebar -->
 					
-				</div>	        	
 	        	<!--  page content-->
-	        	
-	        	
-
 	        	
 			</div>
 		</div>

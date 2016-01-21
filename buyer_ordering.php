@@ -19,7 +19,7 @@
   $balance = $row_user['balance'];
 
   echo '<table class="new">';
-  echo '<tr><th>название</th><th>цена</th><th>дата</th><th>способ получения</th><th>статус</th><th>оплата</th><th>отмена заказа</th></tr>';
+  echo '<tr><th>название</th><th>цена</th><th>дата</th><th>получение</th><th>статус</th><th>оплата</th><th>отмена</th></tr>';
     
   while ($row = mysqli_fetch_array($data)) {
     if (!$row['archive'] == 1){

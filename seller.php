@@ -84,7 +84,7 @@
                 
               echo '
               
-              <table cellspacing="0" class="new">
+              <table cellspacing="0" class="lef">
                 <tr>
                   <td width="200" height="200" >
                     <img src="img/avatars/' . $row['avatar'] .'" alt="alt text" />
@@ -104,7 +104,7 @@
                 </tr>
               </table>
               
-              <table cellspacing="0" class="new">
+              <table cellspacing="0" class="lef">
               ';
               
               //по-новой: если этот покупатель оценивал продавца - то отображается только рейтинг
@@ -195,7 +195,8 @@
               
               mysqli_close($dbc);
               ?>
-		              
+            </div>
+      </div>
 		<footer>
 			<div class="wrapper">
 			

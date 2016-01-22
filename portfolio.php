@@ -98,7 +98,7 @@
                       '<figcaption>' .
                         '<strong>'. $row['name'] .'</strong>' .
                         '<span>'. $row['description'] .'</span>' .
-                        '<span>'. $row['guarantee'] .'</span>' .
+                        '<span>гарантия '. $row['guarantee'] .'</span>' .
                         '<em>'. $row['cost'] .' Р</em>' .
                       '<a href="single.php?product_id=' . $row['product_id'] . '"  class="thumb">'.
                       '</figcaption>' .
@@ -110,7 +110,7 @@
                       '<figcaption>' .
                         '<strong>'. $row['name'] .'</strong>' .
                         '<span>'. $row['description'] .'</span>' .
-                        '<span>'. $row['guarantee'] .'</span>' .
+                        '<span>гарантия '. $row['guarantee'] .'</span>' .
                         '<em>'. $row['cost'] .' Р</em>' .
                       '<a href="single.php?product_id=' . $row['product_id'] . '"  class="thumb">'.
                       '</figcaption>' .
@@ -131,7 +131,6 @@
 				</ul>
 				<div class="clearfix"></div>
 	        	ENDS pager -->
-		
 	        	
 			</div>
 		</div>

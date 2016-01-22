@@ -39,8 +39,6 @@ body{
 	font-size: 13px;
 }
 
-
-
 body p{
 	margin-bottom: 21px;
 }
@@ -53,8 +51,6 @@ body a{
 	-o-transition: color 0.3s ease;
 	transition: color 0.3s ease;
 }
-
-
 
 #logo{
 	display: inline-block;
@@ -429,6 +425,7 @@ nav a{
 }
 
 .home-block figcaption strong{ 
+    font-size: 25px;
 	font-weight: bold;
 	line-height: 1.3em;
 	margin-bottom: 7px;
@@ -436,16 +433,21 @@ nav a{
 }
 
 .home-block figcaption span{ 
-	font-size: 11px;
+	font-size: 15px;
 	margin-bottom: 7px;
 }
 
 .home-block figcaption em{ 
-	font-size: 11px;
+	font-size: 13px;
 	font-weight: bold;
 	font-style: normal;
 	position: absolute;
-	bottom: 10px;
+	bottom: 15px;
+}
+
+.home-block figcaption em.price{ 
+    font-size: 30px;
+    font-weight: normal;
 }
 
 .home-block figcaption em{ font-weight: bold; }
@@ -521,23 +523,24 @@ nav a{
 }
 
 .portfolio-thumbs figcaption strong{ 
-	font-weight: bold;
+    font-size: 25px;
+    font-weight: bold;
 	line-height: 1.3em;
 	margin-bottom: 7px;
 	margin-top: 17px;
 }
 
 .portfolio-thumbs figcaption span{ 
-	font-size: 11px;
+	font-size: 15px;
 	margin-bottom: 7px;
 }
 
 .portfolio-thumbs figcaption em{ 
-	font-size: 11px;
-	font-weight: bold;
+	font-size: 30px;
+	font-weight: normal;
 	font-style: normal;
 	position: absolute;
-	bottom: 10px;
+	bottom: 15px;
 }
 
 

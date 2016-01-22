@@ -128,8 +128,8 @@
                     '<figcaption>' .
                       '<strong>'. $row['name'] .'</strong>' .
                       '<span>'. $row['description'] .'</span>' .
-                      '<span>'. $row['guarantee'] .'</span>' .
-                      '<em>'. $row['cost'] .' Р</em>' .
+                      '<span>гарантия '. $row['guarantee'] .'</span>' .
+                      '<em class="price">'. $row['cost'] .' Р</em>' .
                     '<a href="single.php?product_id=' . $row['product_id'] . '"  class="thumb">'.
                     '</figcaption>' .
                   '<img src="' . GW_UPLOADPATH . $row['picture'] . '" alt="Alt text" /></a>' .
@@ -140,8 +140,8 @@
                     '<figcaption>' .
                       '<strong>'. $row['name'] .'</strong>' .
                       '<span>'. $row['description'] .'</span>' .
-                      '<span>'. $row['guarantee'] .'</span>' .
-                      '<em>'. $row['cost'] .' Р</em>' .
+                      '<span>гарантия '. $row['guarantee'] .'</span>' .
+                      '<em class="price">'. $row['cost'] .' Р</em>' .
                     '<a href="single.php?product_id=' . $row['product_id'] . '"  class="thumb">'.
                     '</figcaption>' .
                     '<img src="' . GW_UPLOADPATH . $row['picture'] . '" alt="Alt text" /></a>' .
@@ -164,11 +164,11 @@
           <div class="one-fourth-thumbs clearfix">
 
             <?php 
-                      
+            
                         $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME); 
                         $query = "SELECT * FROM sellers ORDER BY profit DESC LIMIT 4";
                         $data = mysqli_query($dbc, $query);
-                      
+            
                         $i = 1;
                         while ($row = mysqli_fetch_array($data)) {
                           if(($i==4)){
@@ -177,7 +177,7 @@
 		        			<figcaption>
 	        					<strong>'. $row['name'] .'</strong>
 	        					<span>Поднял '. $row['profit'] .' р</span>
-	        					<em>Дата регистрации: '. $row['date'] .'</em>
+	        					<em>Дата регистрации: <br /><br />'. $row['date'] .'</em>
 	        					<a href="seller.php?seller_id=' . $row['user_id'] . '" class="opener"></a>
 			        		</figcaption>
 			        		
@@ -191,7 +191,7 @@
 		        			<figcaption>
 	        					<strong>'. $row['name'] .'</strong>
 	        					<span>Поднял '. $row['profit'] .' р</span>
-	        					<em>Дата регистрации: '. $row['date'] .'</em>
+	        					<em>Дата регистрации: <br /><br />'. $row['date'] .'</em>
 	        					<a href="seller.php?seller_id=' . $row['user_id'] . '" class="opener"></a>
 			        		</figcaption>
 			        		
@@ -203,7 +203,6 @@
                         }
                       ?>
 
-              <a href="#" class="more-link right">Полный рейтинг  &#8594;</a>
           </div>
           <!-- ENDS home-block -->
 

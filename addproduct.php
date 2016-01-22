@@ -77,34 +77,41 @@
   }
 ?>
 
-<hr />
+  <hr />
 
-    <h2 class="page-heading"><span>РАЗМЕЩЕНИЕ ТОВАРА</span></h2>  
+  <h2 class="page-heading"><span>РАЗМЕЩЕНИЕ ТОВАРА</span></h2>
 
-<form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="commentform">
+  <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="commentform">
     <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo GW_MAXFILESIZE; ?>" />
-    
+
     <input type="text" id="name" name="name" value="" tabindex="1" />
-    <label for="name">Наименование</label><br />
-    
+    <label for="name">Наименование</label>
+    <br />
+
     <input type="text" id="description" name="description" value="" tabindex="2" />
-    <label for="description">Описание</label><br />
-    
+    <label for="description">Описание</label>
+    <br />
+
     <input type="text" id="cost" name="cost" value="" tabindex="3" />
-    <label for="cost">Цена</label><br />
-    
+    <label for="cost">Цена</label>
+    <br />
+
     <input type="text" id="guarantee" name="guarantee" value="" tabindex="4" />
-    <label for="guarantee">Гарантия</label><br />
-    
+    <label for="guarantee">Гарантия</label>
+    <br />
+
     <input type="file" id="picture" name="picture" tabindex="5" />
-    <label for="picture">Превью</label><br />
-    
+    <label for="picture">Превью</label>
+    <br />
+
     <input type="file" id="picone" name="picone" tabindex="6" />
-    <label for="picone">Фото1</label><br />
-    
+    <label for="picone">Фото1</label>
+    <br />
+
     <input type="file" id="pictwo" name="pictwo" tabindex="7" />
-    <label for="pictwo">Фото2</label><br />
-    
+    <label for="pictwo">Фото2</label>
+    <br />
+
     <?php    echo '<p class="error">Фото должно быть GIF, JPEG, или PNG формата не больше, чем ' . (GW_MAXFILESIZE / 1024000) . ' Мб.</p>'; 
   
     $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -123,8 +130,8 @@
     <label for="email">E-mail</label><br />
     ';
     ?>
-    <hr />
-    <input type="submit" value="добавить" name="submit" />
-</form>
-      
+      <hr />
+      <input type="submit" value="добавить" name="submit" />
+  </form>
+
   </div>

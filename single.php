@@ -218,7 +218,7 @@
                                       ';
                             }  
                           
-                            mysqli_close($dbc);
+                            
                           ?>
                           
 						</div>
@@ -250,11 +250,19 @@
 	        		
 	        		<ul>
 		        		<li class="block">
-			        		<h4>Информация</h4>
+			        		<h4>другие товары</h4>
 							<ul>
-								<li class="cat-item"><a href="#" title="View all posts">Описание</a></li>
-								<li class="cat-item"><a href="#" title="View all posts">Гарантия</a></li>
-								<li class="cat-item"><a href="#" title="View all posts">Цена</a></li>								
+                                <?php
+                                  $query = "SELECT product_id, name FROM product";
+                                  $data = mysqli_query($dbc, $query); 
+
+                                  while ($row = mysqli_fetch_array($data)) {
+                                    echo '<li class="cat-item"><a href="single.php?product_id='. $row['product_id'] .'" title="View all posts">'. $row['name'] .'</a></li>';                                    
+                                  }
+                                  
+                                  mysqli_close($dbc);
+                                ?>
+                              
 							</ul>
 		        		</li>
 		        		        		

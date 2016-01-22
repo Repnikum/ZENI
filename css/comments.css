@@ -228,9 +228,14 @@
 	margin-bottom: 20px;
 }
 
+#commentform select{
+  width: 230px;
+}
+
 #contactForm input,
 #contactForm textarea,
 #commentform input,
+#commentform select,
 #commentform textarea{
 	padding: 10px 15px;
 	background: #eaeaea;
@@ -246,6 +251,7 @@
 #contactForm input:focus,
 #contactForm textarea:focus,
 #commentform input:focus,
+#commentform select:focus,
 #commentform textarea:focus{
 	background: #fff;
 	-webkit-box-shadow: 0px 0px 3px rgba(234,76,136,.4);
@@ -263,12 +269,12 @@
 	overflow: hidden;
 }
 
+
 #contactForm  textarea,
 #commentform textarea{
 	width: 90%;
 	height: 230px;
 }
-
 
 #contactForm input[type="submit"],
 #commentform input[type="submit"],

@@ -140,9 +140,8 @@ if (isset($_POST['submit'])) {
     <form enctype="multipart/form-data" method="post" action="<?php echo $server; ?>" id="commentform">  
     
     <fieldset>
-      <legend>Данные о заказе</legend>
+      <legend>Способ получения:</legend><br />
                  
-       <label for="getting">Способ получения:</label>
       <select id="getting" name="getting">
         <option value="самовывоз" >самовывоз</option>
         <option value="доставка на дом" >доставка</option>
@@ -157,7 +156,7 @@ if (isset($_POST['submit'])) {
       $email = $row['email'];
       $phone = $row['phone'];
         echo '
-        <legend>Контактные данные</legend>
+        <legend>Контактные данные</legend><br />
           <input type="text" name="phone" id="phone" value="'. $phone .'" />
           <label for="phone">Телефон</label><br/>
       
@@ -166,7 +165,7 @@ if (isset($_POST['submit'])) {
         ';
       } else {    
         echo '
-          <legend>Контактные данные</legend>
+          <legend>Контактные данные</legend><br />
           <input type="text" name="phone" id="phone" value="" />
           <label for="phone">Телефон</label><br/>
 

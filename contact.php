@@ -68,8 +68,8 @@
         <?php
           require_once('startsession.php');
           require_once('header.php');
+          require_once('connectvars.php');
         ?>
-		
 		
 		<!-- MAIN -->
 		<div id="main">	
@@ -82,10 +82,11 @@
 	        	<div id="page-content" class="clearfix">
 					
 				<!-- Map -->
+                                  
 				<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true" /></script>
 				<script type="text/javascript">
 					function initialize() {
-						var latlng = new google.maps.LatLng(59.95, 30.31);
+						var latlng = new google.maps.LatLng(-34.397, 150.644);
 						var myOptions = {
 						  zoom: 8,
 						  center: latlng,
@@ -98,9 +99,6 @@
 				
 				<div id="map_canvas"></div>
 				<!-- ENDS Map -->
-				
-				
-	        	
 	        	
 					<div class="map-content">
 						Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
@@ -161,12 +159,12 @@
 		        	<div class="clearfix"></div>
 					<!-- ENDS contact-sidebar -->
 					
+				</div>	        	
 	        	<!--  page content-->
 	        	
 			</div>
 		</div>
 		<!-- ENDS MAIN -->
-		
 		
 		<?php
           require_once('footer.php');  

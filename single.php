@@ -142,14 +142,6 @@
 						</div></table>';
                          
                       ?>
-                      
-						<div class="meta">
-							<div class="comments"><a href="#">5 comments </a></div>
-							<div class="user"><a href="#">By admin</a></div>
-                            <div class="categories">In <a href="#">Category 1</a>, <a href="#">Category 2</a></div>
-						</div>
-					
-					
 					
 	    				<!-- comments list -->
 						<div id="comments-wrap">
@@ -217,8 +209,6 @@
 							             </ol>
                                       ';
                             }  
-                          
-                            
                           ?>
                           
 						</div>

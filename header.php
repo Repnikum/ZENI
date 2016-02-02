@@ -16,7 +16,6 @@
                                   <li><a href="portfolio.php?order=DESC">ПО ЦЕНЕ v</a></li>
 							     </ul>
                               </li>';
-                        echo '<li><a href="contact.php">КОНТАКТЫ</a>';
                         echo '<li><a href="logout.php">Выйти (' . $_SESSION['username'] . ')</a>';                        
                       }
                       else if (isset($_SESSION['seller'])) {
@@ -32,7 +31,6 @@
                                   <li><a href="portfolio.php?order=SELLER">МОИ ТОВАРЫ</a></li>
 							     </ul>
                               </li>';
-                        echo '<li><a href="contact.php">КОНТАКТЫ</a>';
                         echo '<li><a href="logout.php">Выйти (' . $_SESSION['username'] . ')</a>';
                       }
                       else {
@@ -44,7 +42,6 @@
 							     </ul>
                               </li>';
                         echo '<li><a href="page.php">РЕГИСТРАЦИЯ</a></li>';
-                        echo '<li><a href="contact.php">КОНТАКТЫ</a>';
                         echo '<li><a href="loggin.php">ВОЙТИ</a>';
                       }
                       echo '<hr />';

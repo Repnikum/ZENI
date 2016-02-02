@@ -92,22 +92,14 @@
     $email = mysqli_real_escape_string($dbc, trim($_POST['email']));
     $name = mysqli_real_escape_string($dbc, trim($_POST['name']));
     $phone = mysqli_real_escape_string($dbc, trim($_POST['phone']));
-    $picture = mysqli_real_escape_string($dbc, trim($_FILES['picture']['name']));
-    $picture_type = $_FILES['picture']['type'];
-    $picture_size = $_FILES['picture']['size'];
-
-    if (!empty($username) && !empty($password1) && !empty($password2) && ($password1 == $password2) && !empty($email) && !empty($name) && !empty($phone) && !empty($picture)) {
-    if ((($picture_type == 'image/gif') || ($picture_type == 'image/jpeg') || ($picture_type == 'image/pjpeg') || ($picture_type == 'image/png')) && ($picture_size > 0) && ($picture_size <= GW_MAXFILESIZE)) {
-    if ($_FILES['picture']['error'] == 0) {
+    
+    if (!empty($username) && !empty($password1) && !empty($password2) && ($password1 == $password2) && !empty($email) && !empty($name) && !empty($phone)) {
       
-      $target = GW_AVATARPATH . $picture;
-      
-      if (move_uploaded_file($_FILES['picture']['tmp_name'], $target)) {
       $query = "SELECT * FROM users WHERE username = '$username'";
       $data = mysqli_query($dbc, $query);
       if (mysqli_num_rows($data) == 0) {
        
-        $query = "INSERT INTO users (username, password, email, name, phone, avatar) VALUES ('$username', SHA('$password1'), '$email', '$name', '$phone', '$picture')";
+      $query = "INSERT INTO users (username, password, email, name, phone) VALUES ('$username', SHA('$password1'), '$email', '$name', '$phone')";
         
         mysqli_query($dbc, $query);
         
@@ -117,7 +109,6 @@
         $email = "";
         $name = "";
         $phone = "";
-        $picture = "";
         
         echo '<p>Ваш новый аккаунт был успешно создан. Вы готовы <a href="loggin.php">войти</a>.</p>';
                
@@ -125,11 +116,6 @@
         exit();
       }
       else {echo '<p class="error">Аккаунт с таким именем уже существует. Пожалуйста, выберите другой логин.</p>'; $username = "";}
-      }
-      else {echo '<p class="error">Извините, возникла проблема с загрузкой Вашего фото.</p>';}
-      }
-      } else {echo '<p class="error">Фото должно быть GIF, JPEG, или PNG формата не больше, чем ' . (GW_MAXFILESIZE / 1024) . ' Кб.</p>';}
-      @unlink($_FILES['picture']['tmp_name']);
   } else {echo '<p class="error">Вы должны ввести все данные, включая пароль дважды.</p>';}
 } 
 /* РЕГИСТРАЦИЯ ВРУЧНУЮ В КАЧЕСТВЕ ПРОДАВЦА
@@ -204,11 +190,7 @@ else if (isset($_POST['submitCEL'])) {
             <label for="name">Имя</label><br />
 
             <input type="phone" name="phone" id="author" value="" tabindex="6" />
-            <label for="phone">Телефон</label><br />
-
-            <label for="picture">аватар:</label><br />
-            <input type="file" id="picture" name="picture" /><br />
-            <?php    echo '<p class="error">Фото должно быть GIF, JPEG, или PNG формата не больше, чем ' . (GW_MAXFILESIZE / 1024000) . ' Мб.</p>'; ?>
+            <label for="phone">Телефон</label><br />          
         </fieldset>
           <input type="submit" value="зарегистрироваться" name="submitBUY" />
 <!--          <input type="submit" value="зарегистрироваться как продавец" name="submitCEL" />  -->

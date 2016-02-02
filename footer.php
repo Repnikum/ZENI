@@ -5,25 +5,33 @@
 					<li class="first-col">
 						
 						<div class="widget-block">
-							<h4>Recent posts</h4>
-							<div class="recent-post">
-								<a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
-								<div class="post-head">
-									<a href="#">Pellentesque habitant morbi senectus</a><span> March 12, 2011</span>
-								</div>
-							</div>
-							<div class="recent-post">
-								<a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
-								<div class="post-head">
-									<a href="#">Pellentesque habitant morbi senectus</a><span> March 12, 2011</span>
-								</div>
-							</div>
-							<div class="recent-post">
-								<a href="#" class="thumb"><img src="img/dummies/54x54.gif" alt="Post" /></a>
-								<div class="post-head">
-									<a href="#">Pellentesque habitant morbi senectus</a><span> March 12, 2011</span>
-								</div>
-							</div>
+							<h4>Последние поступления</h4>
+                          <?php 
+                          
+                            $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);                     
+                            $query = "SELECT product_id, name, cost, seller_id FROM product ORDER BY product_id DESC LIMIT 3";
+                            $data = mysqli_query($dbc, $query);
+                          
+                            while ($row = mysqli_fetch_array($data)) {
+                              
+                              $query_seller = "SELECT avatar FROM sellers WHERE user_id = '". $row['seller_id'] ."'";
+                              $seller_data = mysqli_query($dbc, $query_seller);
+                                                            
+                              echo '
+                              <div class="recent-post"> ';
+                              while ($avatar = mysqli_fetch_array($seller_data)) {
+                                    echo '<a href="seller.php?seller_id='. $row['seller_id'] .'" class="thumb"><img width="54px" height="54px" src="img/avatars/'.  $avatar['avatar'] .'" alt="Post" /></a>';
+                                  }
+                            echo     '<div class="post-head">
+                                      <a href="single.php?product_id='. $row['product_id'] .'">'. $row['name'] .'</a><span> '. $row['cost'] .' Р</span>
+                                  </div>
+							   </div>
+                              ';
+                              
+                            }
+                          
+                          ?>
+							
 						</div>
 					</li>
 					

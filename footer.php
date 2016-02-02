@@ -5,7 +5,7 @@
 					<li class="first-col">
 						
 						<div class="widget-block">
-							<h4>Последние поступления</h4>
+							<h4>последние поступления</h4>
                           <?php 
                           
                             $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);                     
@@ -38,8 +38,10 @@
 					<li class="second-col">
 						
 						<div class="widget-block">
-							<h4>Zeni Template</h4>
-							<p>Hope you find this template useful you are free to use it on personal and commercial projects. See the full license at this </p>
+							<h4>наши преимущества</h4>
+							<p>Первое </p>
+                            <p>Второе </p>
+                            <p>Третье </p>
 						</div>
 						
 					</li>
@@ -48,7 +50,8 @@
 						
 						<div class="widget-block">
 							<div id="tweets" class="footer-col tweet">
-		         				<h4>Twitter widget</h4>
+		         				<h4>виджет ВКонтакте</h4>
+                                
 		         			</div>
 		         		</div>
 		         		
@@ -57,8 +60,10 @@
 					<li class="fourth-col">
 						
 						<div class="widget-block">
-							<h4>Placeholder images</h4>
-							<p>Thanks to for sharing his work as place holder images for this preview. Visit his and find more of his awesome work.</p>
+							<h4>платежные системы</h4>
+							<p>PayPal</p>
+                            <p>Visa</p>
+                            <p>MasterCard</p>
 						</div>
 		         		
 					</li>	
@@ -66,12 +71,14 @@
 				
 				
 				<div class="footer-bottom">
-					<div class="left">Created by <a href="http://bayguzin.ru">bayguzin.ru</a></div>
+					<div class="left">© 2015 ZENI trade </div>
 					<div class="right">
 						<ul id="social-bar">
-							<li><a href=""  title="Become a fan" class="poshytip"><img src="img/social/facebook.png"  alt="Facebook" /></a></li>
-							<li><a href="" title="Follow my tweets" class="poshytip"><img src="img/social/twitter.png"  alt="twitter" /></a></li>
-							<li><a href=""  title="Add to the circle" class="poshytip"><img src="img/social/plus.png" alt="Google plus" /></a></li>
+							<li><a href=""  title="Вступить в сообщество" class="poshytip"><img src="img/social/facebook.png"  alt="Facebook" /></a></li>
+                            <li><a href="" title="Смотреть фото" class="poshytip"><img height="36" width="36" src="img/social/instagram.png"  alt="twitter" /></a></li>
+							<li><a href="" title="Стать фоловером" class="poshytip"><img src="img/social/twitter.png"  alt="twitter" /></a></li>
+                            <li><a href="" title="Подписаться на канал" class="poshytip"><img src="img/social/youtube.png"  alt="twitter" /></a></li>
+							<li><a href="https://github.com/Repnikum/ZENI"  title="Исходный код" class="poshytip"><img src="img/social/github.png" alt="Google plus" /></a></li>
 						</ul>
 					</div>
 				</div>

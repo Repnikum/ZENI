@@ -132,7 +132,8 @@
       @unlink($_FILES['picture']['tmp_name']);
   } else {echo '<p class="error">Вы должны ввести все данные, включая пароль дважды.</p>';}
 } 
-    else if (isset($_POST['submitCEL'])) {
+/* РЕГИСТРАЦИЯ ВРУЧНУЮ В КАЧЕСТВЕ ПРОДАВЦА
+else if (isset($_POST['submitCEL'])) {
     $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     
     $username = mysqli_real_escape_string($dbc, trim($_POST['username']));
@@ -180,7 +181,7 @@
       } else {echo '<p class="error">Фото должно быть GIF, JPEG, или PNG формата не больше, чем ' . (GW_MAXFILESIZE / 1024) . ' Кб.</p>';}
       @unlink($_FILES['picture']['tmp_name']);
   } else {echo '<p class="error">Вы должны ввести все данные, включая пароль дважды.</p>';}
-}
+} */
 ?>
 
         <form enctype="multipart/form-data" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="commentform">
@@ -209,8 +210,8 @@
             <input type="file" id="picture" name="picture" /><br />
             <?php    echo '<p class="error">Фото должно быть GIF, JPEG, или PNG формата не больше, чем ' . (GW_MAXFILESIZE / 1024000) . ' Мб.</p>'; ?>
         </fieldset>
-          <input type="submit" value="зарегистрироваться как покупатель" name="submitBUY" />
-          <input type="submit" value="зарегистрироваться как продавец" name="submitCEL" />
+          <input type="submit" value="зарегистрироваться" name="submitBUY" />
+<!--          <input type="submit" value="зарегистрироваться как продавец" name="submitCEL" />  -->
         </form>
               
 		<?php

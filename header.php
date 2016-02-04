@@ -16,7 +16,7 @@
                                   <li><a href="portfolio.php?order=DESC">ПО ЦЕНЕ v</a></li>
 							     </ul>
                               </li>';
-                        echo '<li><a href="logout.php">Выйти (' . $_SESSION['username'] . ')</a>';                        
+                        echo '<li><a href="logout.php">ВЫЙТИ (' . $_SESSION['username'] . ')</a>';                        
                       }
                       else if (isset($_SESSION['seller'])) {
                         echo '<li><a href="index.php">ГЛАВНАЯ</a>
@@ -31,7 +31,7 @@
                                   <li><a href="portfolio.php?order=SELLER">МОИ ТОВАРЫ</a></li>
 							     </ul>
                               </li>';
-                        echo '<li><a href="logout.php">Выйти (' . $_SESSION['username'] . ')</a>';
+                        echo '<li><a href="logout.php">ВЫЙТИ (' . $_SESSION['username'] . ')</a>';
                       }
                       else {
                         echo '<li><a href="index.php">ГЛАВНАЯ</a></li>';

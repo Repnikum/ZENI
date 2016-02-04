@@ -36,12 +36,12 @@
         }
         else {
           // The username/password are incorrect so set an error message
-          $error_msg = 'Извините, Вы должны ввести действительные логин и пароль.';
+          $error_msg = 'Извините, Вы должны ввести действительные логин и пароль';
         }
       }
       else {
         // The username/password weren't entered so set an error message
-        $error_msg = 'Извините, Вы должны ввести логин и пароль, чтобы войти.';
+        $error_msg = 'Извините, Вы должны ввести логин и пароль, чтобы войти';
       }
     } else if (isset($_POST['submitCEL'])) {
       // Connect to the database
@@ -70,12 +70,12 @@
         }
         else {
           // The username/password are incorrect so set an error message
-          $error_msg = 'Извините, Вы должны ввести действительные логин и пароль.';
+          $error_msg = 'Извините, Вы должны ввести действительные логин и пароль';
         }
       }
       else {
         // The username/password weren't entered so set an error message
-        $error_msg = 'Извините, Вы должны ввести логин и пароль, чтобы войти.';
+        $error_msg = 'Извините, Вы должны ввести логин и пароль, чтобы войти';
       }
     }
   }
@@ -111,6 +111,6 @@
     echo '</td></tr></table>';
   }
   else {
-   echo '<div id="main"><div class="wrapper"></p><h2 class="page-heading"><span>Вы вошли как ' . $_SESSION['username'] . '.</span></h2></div></div>';
+   echo '<div id="main"><div class="wrapper"></p><h2 class="page-heading"><span>Вы вошли как ' . $_SESSION['username'] . '</span></h2></div></div>';
   }
 ?>

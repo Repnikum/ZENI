@@ -87,6 +87,8 @@ if (isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($dbc, trim($_POST['email']));
     $phone = mysqli_real_escape_string($dbc, trim($_POST['phone']));
   
+  if (!empty($email) || !empty($phone)) {
+  
     $query_user = "UPDATE users SET `email`='$email', `phone`='$phone' WHERE `user_id`='$user_id';"; 
     mysqli_query($dbc, $query_user);
     
@@ -102,7 +104,9 @@ if (isset($_POST['submit'])) {
             </div></div>
             ';
        
+        require_once('footer.php');
         exit();
+  } else {echo '<p class="error">Вы должны указать телефон или e-mail для связи</p>';}
   } 
   
   $query = "SELECT name, description, cost, guarantee, picture FROM product WHERE product_id = '" . $_GET['product_id'] . "'";

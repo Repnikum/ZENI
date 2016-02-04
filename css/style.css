@@ -11,6 +11,10 @@
 
 /* GENERAL ------------------------------------------------------------*/
 
+.error {
+  font-weight: bold;
+  color: #FF0000;
+}
 
 article, aside, canvas, figure, figure img, figcaption, hgroup,
 footer, header, nav, section, audio, video {
@@ -465,7 +469,6 @@ nav a{
 
 #main{
 	padding-top: 40px;
-	background: url(../img/oblique-lines.png) repeat-x;
 	margin-bottom: 60px;
 }
 

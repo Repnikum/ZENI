@@ -112,7 +112,7 @@
     <label for="pictwo">Фото2</label>
     <br />
 
-    <?php    echo '<p class="error">Фото должно быть GIF, JPEG, или PNG формата не больше, чем ' . (GW_MAXFILESIZE / 1024000) . ' Мб.</p>'; 
+    <?php    echo '<p class="error">Фото должно быть GIF, JPEG, или PNG формата не больше, чем ' . (GW_MAXFILESIZE / 1024000) . ' Мб</p>'; 
   
     $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     $query = "SELECT * FROM sellers WHERE user_id = '". $_SESSION['user_id'] ."'";

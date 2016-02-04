@@ -103,7 +103,6 @@ if (isset($_POST['submit'])) {
             <h2>Ваш заказ принят в обработку.<br/><br/> Хотите ли Вы <a href="portfolio.php?order=DESC">выбрать что-нибудь ещё</a>?</h2>
             </div></div>
             ';
-       
         require_once('footer.php');
         exit();
   } else {echo '<p class="error">Вы должны указать телефон или e-mail для связи</p>';}

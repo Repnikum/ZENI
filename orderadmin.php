@@ -26,7 +26,7 @@
 
   // Loop through the array of score data, formatting it as HTML 
   echo '<table>';
-  echo '<tr><th>дата</th><th>ID пользователя</th><th>ID товара</th><th>способ оплаты</th><th>способ получения</th><th>действие</th></tr>';
+  echo '<tr><th>дата</th><th>ID пользователя</th><th>ID товара</th><th>способ получения</th><th>действие</th></tr>';
   while ($row = mysqli_fetch_array($data)) { 
     // Display the score data
     echo '<td>' . $row['date'] . '</td>';

@@ -108,7 +108,7 @@
 
         <!-- home-block -->
         <div class="home-block">
-          <h2 class="home-block-heading"><span>ЛУЧШИЕ ТОВАРЫ</span></h2>
+          <h2 class="home-block-heading"><span>ПОСЛЕДНИЕ ПОСТУПЛЕНИЯ</span></h2>
           <div class="one-third-thumbs clearfix">
 
             <!-- вывод 6 самых дорогих товаров на экран -->
@@ -158,13 +158,13 @@
         <!-- ENDS home-block -->
 
 
-        <!-- home-block -->
+        <!-- ЛУЧШИЕ ПРОДАВЦЫ 
         <div class="home-block">
           <h2 class="home-block-heading"><span>ЛУЧШИЕ ПРОДАВЦЫ</span></h2>
           <div class="one-fourth-thumbs clearfix">
 
             <?php 
-            
+            /*
                         $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME); 
                         $query = "SELECT * FROM sellers ORDER BY profit DESC LIMIT 4";
                         $data = mysqli_query($dbc, $query);
@@ -201,10 +201,11 @@
                            $i++;
                          }
                         }
-                      ?>
+              */
+              ?>
 
           </div>
-          <!-- ENDS home-block -->
+          -->
 
         </div>
       </div>

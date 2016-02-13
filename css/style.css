@@ -366,7 +366,6 @@ nav a{
 
 .home-block figure .thumb{
 	display: block;
-	
 }
 
 
@@ -492,6 +491,7 @@ nav a{
 
 .portfolio-thumbs figure .thumb{
 	display: block;
+  
 }
 
 .portfolio-thumbs figure img{

@@ -11,8 +11,7 @@
   <link rel="stylesheet" media="all" href="css/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
-
-
+    
   <!-- JS -->
   <script src="js/jquery-1.6.4.min.js"></script>
   <script src="js/css3-mediaqueries.js"></script>
@@ -64,7 +63,9 @@
   <?php
           require_once('startsession.php');
           require_once('header.php');
-        ?>
+  ?>
+  
+  <section class="subscribe text-center"></section>
 
     <!-- MAIN -->
     <div id="main">

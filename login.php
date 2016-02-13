@@ -82,6 +82,7 @@
 
   $page_title = 'Войти';
   require_once('header.php');
+  echo '<section class="subscribe text-center"></section>';
 
   if (empty($_SESSION['user_id'])) {
     echo '<p class="error">' . $error_msg . '</p>';
@@ -89,6 +90,8 @@
 
 			<div class="wrapper">
               <h2 class="page-heading"><span>ВОЙТИ</span></h2>
+              
+  <!--    форма стандартного входа            
   <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="commentform">
     <fieldset>
       
@@ -100,10 +103,10 @@
       
     </fieldset>
       <input type="submit" value="войти" id="submitBUY" name="submitBUY" />
+-->   
 <!--      <input type="submit" value="войти как продавец" id="submitCEL" name="submitCEL" />  -->
   </form>
     <?php
-    echo '<table><tr><td><h3>вход через соц. сети</h3>';
     require_once('indexVKbuy.php');
     
   /*  echo '</td></tr><tr><td><h3>продавцам</h3>';

@@ -1,6 +1,7 @@
+
 <header class="clearfix">
 			<div class="wrapper clearfix">
-				<a href="index.php" id="logo"><img  src="img/logo.png" alt="Zeni"></a>
+		<!--		<a href="index.php" id="logo"><img  src="img/logo.png" alt="Zeni"></a> -->
 				<nav>
                     <ul id="nav" class="sf-menu">
                   <?php
@@ -41,7 +42,7 @@
                                   <li><a href="portfolio.php?order=DESC">ПО ЦЕНЕ v</a></li>
 							     </ul>
                               </li>';
-                        echo '<li><a href="page.php">РЕГИСТРАЦИЯ</a></li>';
+                    /*    echo '<li><a href="page.php">РЕГИСТРАЦИЯ</a></li>'; */
                         echo '<li><a href="loggin.php">ВОЙТИ</a>';
                       }
                       echo '<hr />';

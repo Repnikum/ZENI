@@ -27,7 +27,7 @@ h1,h2,h3,h4,h5,h6{ color: #444444; }
 ::-moz-selection 	{background: #880016; color: #fff; }
 img::selection 		{background: transparent;}
 img::-moz-selection	{background: transparent;}
-body {-webkit-tap-highlight-color: #9b59b6;}
+body {-webkit-tap-highlight-color: #880016;}
 
 /* HEADER ------------------------------------------------------------*/
 
@@ -144,7 +144,7 @@ article .meta{
 }
 
 .page-navigation a:hover{
-	background: #d14233;
+	background: #880016;
 	color: #fff;
 }
 

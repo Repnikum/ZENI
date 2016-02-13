@@ -16,15 +16,15 @@ body a:hover,
 #top-widget-holder a:hover,
 #nav>li>a:hover,
 .project-heading .launch:hover{
-	color: #9b59b6;
+	color: #880016;
 }
 
 h1,h2,h3,h4,h5,h6{ color: #444444; }
 
 /* Selection colours (easy to forget) */
 
-::selection 	 	{background: #9b59b6; color: #fff; }
-::-moz-selection 	{background: #9b59b6; color: #fff; }
+::selection 	 	{background: #880016; color: #fff; }
+::-moz-selection 	{background: #880016; color: #fff; }
 img::selection 		{background: transparent;}
 img::-moz-selection	{background: transparent;}
 body {-webkit-tap-highlight-color: #9b59b6;}
@@ -66,7 +66,7 @@ nav a{ color: #E2E0D7; }
 
 #nav>li ul li a:hover,
 #nav>li ul li:nth-child(even) a:hover{
-	background: #9b59b6;
+	background: #880016;
 	color: #fff;
 }
 
@@ -95,14 +95,14 @@ nav a{ color: #E2E0D7; }
 /* HOME ------------------------------------------------------------*/
 
 .home-block figcaption{
-	background: #9b59b6;
+	background: #880016;
 	color: #f1f1f1;
 }
 
 /* PORTFOLIO ------------------------------------------------------------*/
 
 .portfolio-thumbs figcaption{
-	background: #9b59b6;
+	background: #880016;
 	color: #f1f1f1;
 }
 
@@ -114,19 +114,19 @@ nav a{ color: #E2E0D7; }
 
 .project-pager a{ color: #444; }
 
-.project-pager a:hover{ 	color: #9b59b6; }
+.project-pager a:hover{ 	color: #880016; }
 
 /* RELATED PROJECTS ---------------------------------------------------*/
 
 .related-heading{ color: #444; }
 
-.related-projects .thumb{ background: #9b59b6 url(../img/plus.png) center center no-repeat; }
+.related-projects .thumb{ background: #880016 url(../img/plus.png) center center no-repeat; }
 
 
 /* BLOG ------------------------------------------------------------*/
 
 #posts-list .feature-image,
-#post-content .feature-image{ background: #9b59b6 url(../img/plus.png) center center no-repeat; }
+#post-content .feature-image{ background: #880016 url(../img/plus.png) center center no-repeat; }
 
 article .meta{
 	border-top: 1px solid #cecece;
@@ -144,7 +144,7 @@ article .meta{
 }
 
 .page-navigation a:hover{
-	background: #9b59b6;
+	background: #d14233;
 	color: #fff;
 }
 
@@ -154,7 +154,7 @@ article .meta{
 
 .pager li:hover a{
 	color: #fff;
-	background: #9b59b6;
+	background: #880016;
 }
 
 .pager li.active a{ 

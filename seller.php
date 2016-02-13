@@ -106,7 +106,31 @@
               
               //по-новой: если этот покупатель оценивал продавца - то отображается только рейтинг
               //если не оценивал - производится оценка и обновляется страница
+              ?>
               
+              <style>
+                  .scale,
+                  .meter {
+                      height: 30px
+                  }
+                  .scale {
+                      width: 550px;
+                      background: #CCC;
+                  }
+                  
+
+                  .meter:after{
+                      content: "";
+                      position: absolute;
+                      top: 0;
+                      height: 100%;
+                      width: 100%;
+                  }
+                </style>
+                            
+              
+              <?php
+              /*    РЕЙТИНГОВАЯ СИСТЕМА              
               if(isset($_SESSION['buyer'])) {
                 
                 $query_ratings = "SELECT * FROM ratings WHERE buyer_id = '" . $_SESSION['user_id'] . "'";
@@ -134,7 +158,22 @@
                     $query_up = "INSERT INTO ratings (`buyer_id`, `seller_id`) VALUES ('". $_SESSION['user_id'] ."', '". $_GET['seller_id'] ."')";
                     mysqli_query($dbc, $query_up);
                     
-                    echo 'Средняя оценка: ' . $row['rating'] .'';
+                    $rating = (($row['rating'] / $row['voices'])/5)*550;
+                    echo 'Средняя оценка: '. $rating .'';
+                    echo '
+                    <style>
+                      .meter {
+                          width: ' . $rating .'px;
+                          display: inline-block;
+                          vertical-align: top;
+                          background: #323232;
+                      }
+                    </style>
+
+                    <div class="scale">
+                        <div class="meter"></div>
+                    </div>
+                    ';
                   } else {
 
                     echo '   
@@ -155,12 +194,30 @@
                   }
               } else { 
                   
-                  $rating = $row['rating'] / $row['voices'];
-                  echo 'Средняя оценка: '. $rating .''; }
+                  $rating = (($row['rating'] / $row['voices'])/5)*550;
+                  echo 'Средняя оценка: '. $rating .'';
+                  echo '
+                    <style>
+                      .meter {
+                          width: ' . $rating .'px;
+                          display: inline-block;
+                          vertical-align: top;
+                          background:#323232;
+                      }
+                    </style>
+
+                    <div class="scale">
+                        <div class="meter"></div>
+                    </div>
+                    ';
+                }
               } else { 
-                               
-                  $rating = $row['rating'] / $row['voices'];
-                  echo 'Средняя оценка: ' . $rating .' Необходимо <a href="loggin.php">войти</a> как покупатель, чтобы выставить оценку продавцу<br/><br/>'; }
+                if($row['voices']!=0){  
+                  $rating = (($row['rating'] / $row['voices'])/5)*550;
+                } else {$rating=0;}
+                  echo 'Рейтинг продавца: ' . $rating .' Необходимо <a href="loggin.php">войти</a> как покупатель, чтобы выставить оценку продавцу<br/><br/>'; 
+              }
+              */    
                 
               }
               

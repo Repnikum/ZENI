@@ -212,6 +212,7 @@
       </div>
       <!-- ENDS MAIN -->
 
+  
       <?php
         require_once('footer.php');  
       ?>

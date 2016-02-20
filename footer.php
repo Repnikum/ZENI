@@ -36,10 +36,12 @@
 					<li class="second-col">
 						
 						<div class="widget-block">
-							<h4>наши преимущества</h4>
-							<p>Первое </p>
-                            <p>Второе </p>
-                            <p>Третье </p>
+							<h4>навигация</h4>
+                            <ul>
+                              <li type="disc"><a href="index.php">главная </a></li>
+                              <li type="disc"><a href="index.php">каталог </a></li>  
+                              <li type="disc"><a href="index.php">войти </a></li>  
+                            </ul>  
 						</div>
 						
 					</li>
@@ -48,8 +50,12 @@
 						
 						<div class="widget-block">
 							<div id="tweets" class="footer-col tweet">
-		         				<h4>виджет ВКонтакте</h4>
-                                
+                                <script type="text/javascript" src="//vk.com/js/api/openapi.js?121"></script>
+                                <!-- VK Widget -->
+                                <div id="vk_groups"></div>
+                                <script type="text/javascript">
+                                VK.Widgets.Group("vk_groups", {mode: 0, width: "220", height: "400", color1: '#ebebe8', color2: '2B587A', color3: '#323232'}, 20003922);
+                                </script>
 		         			</div>
 		         		</div>
 		         		
@@ -59,9 +65,9 @@
 						
 						<div class="widget-block">
 							<h4>платежные системы</h4>
-							<p>PayPal</p>
-                            <p>Visa</p>
-                            <p>MasterCard</p>
+							<p><img width="100" src="img/paypal.png"/></p>
+                            <p><img width="100" src="img/visa.png"/></p>
+                            <p><img width="100" src="img/mastercard.png"/></p>
 						</div>
 		         		
 					</li>	
@@ -72,10 +78,12 @@
 					<div class="left">© 2015 ZENI trade </div>
 					<div class="right">
 						<ul id="social-bar">
+                          <!-- СОЦСЕТИ
 							<li><a href=""  title="Вступить в сообщество" class="poshytip"><img src="img/social/facebook.png"  alt="Facebook" /></a></li>
-                            <li><a href="" title="Смотреть фото" class="poshytip"><img height="36" width="36" src="img/social/instagram.png"  alt="twitter" /></a></li>
-							<li><a href="" title="Стать фоловером" class="poshytip"><img src="img/social/twitter.png"  alt="twitter" /></a></li>
-                            <li><a href="" title="Подписаться на канал" class="poshytip"><img src="img/social/youtube.png"  alt="twitter" /></a></li>
+                            <li><a href="" title="Смотреть фото" class="poshytip"><img height="36" width="36" src="img/social/instagram.png"  alt="Instagram" /></a></li>
+							<li><a href="" title="Стать фоловером" class="poshytip"><img src="img/social/twitter.png"  alt="Twitter" /></a></li>
+                            <li><a href="" title="Подписаться на канал" class="poshytip"><img src="img/social/youtube.png"  alt="Youtube" /></a></li>
+                          -->
 							<li><a href="https://github.com/Repnikum/ZENI"  title="Исходный код" class="poshytip"><img src="img/social/github.png" alt="Google plus" /></a></li>
 						</ul>
 					</div>

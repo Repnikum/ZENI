@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>ZENI</title>
-
+  <title>ETARA</title>
+  
+  <link rel="shortcut icon" href="img/mini.png" type="image/png">
   <!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -97,12 +98,11 @@
 
           <!-- Headline -->
           <div id="headline">
-            <h1>Акиции и скидки</h1>
-            <p>Невероятные возможности</p>
+            <h1>Недорогой интернет магазин</h1>
+            <p>Товары с Aliexpress и Taobao уже<br /> в Санкт-Петербурге</p>
             <em id="corner"></em>
           </div>
           <!-- ENDS headline -->
-
 
         </div>
         <!-- ENDS slider holder -->

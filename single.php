@@ -84,7 +84,8 @@
                         require_once('appvars.php');
                         require_once('connectvars.php');
                       
-                        $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);                     
+                        $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);       
+ $dbc->query( "SET CHARSET utf8" );
                         $query = "SELECT * FROM product WHERE product_id='" . $_GET['product_id'] . "'";
                         $data = mysqli_query($dbc, $query);
                         $row = mysqli_fetch_array($data);
@@ -152,7 +153,8 @@
                             require_once('appvars.php');
                             require_once('connectvars.php');
 
-                            $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);                     
+                            $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);   
+ $dbc->query( "SET CHARSET utf8" );
                             $query = "SELECT product_id FROM comment";
 
                             $data = mysqli_query($dbc, $query);
@@ -173,7 +175,8 @@
                             require_once('appvars.php');
                             require_once('connectvars.php');
 
-                            $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);                     
+                            $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);    
+ $dbc->query( "SET CHARSET utf8" );
                             $query = "SELECT username, product_id, date, description FROM comment WHERE product_id = $et ORDER BY date ASC";
                             $data = mysqli_query($dbc, $query); 
                           
@@ -246,6 +249,7 @@
 							<ul>
                                 <?php
                                   $query = "SELECT product_id, name FROM product";
+ $dbc->query( "SET CHARSET utf8" );
                                   $data = mysqli_query($dbc, $query); 
 
                                   while ($row = mysqli_fetch_array($data)) {

@@ -117,13 +117,16 @@
           require_once('appvars.php');
           require_once('connectvars.php');
                       
-          $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);                     
+          $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);      
+          $dbc->query( "SET CHARSET utf8" );
           $query = "SELECT product_id, name, description, cost, guarantee, picture FROM product ORDER BY cost DESC LIMIT 6";
-                      
+            
           $data = mysqli_query($dbc, $query);
+
           $i = 1;            
-                      
-          while ($row = mysqli_fetch_array($data)) {            
+                    
+          while ($row = mysqli_fetch_array($data)) {       
+            
                 if(($i==3)){
                 echo '<figure class="last">' . 
                     '<figcaption>' .

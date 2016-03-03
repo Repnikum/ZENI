@@ -10,7 +10,7 @@
 
     $client_id = '5195426'; // ID приложения
     $client_secret = 'IwxgDT5XxJrM6UjEaXA0'; // Защищённый ключ
-    $redirect_uri = 'http://localhost/www/zeni-files/indexVKbuy.php'; // Адрес сайта
+    $redirect_uri = 'http://etara.org/indexVKbuy.php'; // Адрес сайта
 
     $url = 'http://oauth.vk.com/authorize';
 

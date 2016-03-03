@@ -6,7 +6,8 @@
 							<h4>последние поступления</h4>
                           <?php 
                           
-                            $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);                     
+                            $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);          
+ $dbc->query( "SET CHARSET utf8" );
                             $query = "SELECT product_id, name, cost, seller_id FROM product ORDER BY product_id DESC LIMIT 3";
                             $data = mysqli_query($dbc, $query);
                           
@@ -75,7 +76,7 @@
 				
 				
 				<div class="footer-bottom">
-					<div class="left">© 2015 ZENI trade </div>
+					<div class="left">© 2016 ETARA trade </div>
 					<div class="right">
 						<ul id="social-bar">
                           <!-- СОЦСЕТИ

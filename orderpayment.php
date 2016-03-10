@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html class="no-js">
 
@@ -72,74 +71,105 @@
 
                 <div id="main">	
                   <div class="wrapper clearfix">
-                    <h2 class="page-heading"><span>ОПЛАТА ЗАКАКАЗА</span></h2> 
+                    <h2 class="page-heading"><span>ОПЛАТА ЗАКАЗА</span></h2> 
 
                 <?php
                   require_once('appvars.php');
                   require_once('connectvars.php');
-
-                  if (isset($_GET['order_id']) && isset($_GET['name']) && isset($_GET['description']) && isset($_GET['cost']) && isset($_GET['date'])) {    
-                    $order_id = $_GET['order_id'];
-                      $name = $_GET['name'];
-                      $description = $_GET['description'];
-                      $cost = $_GET['cost'];
-                      $date = $_GET['date'];
-                      $seller_id = $_GET['seller_id'];
-                  }
-
-                  if (isset($_POST['submit'])) {
-                    if ($_POST['confirm'] == 'Yes') {
-                      $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME); 
-
-                      $order_id = $_GET['order_id'];
-                      $name = $_GET['name'];
-                      $cost = $_GET['cost'];
-                      $seller_id = $_GET['seller_id'];
+                                                    
+                    if(isset($_GET['key'])){
+                      if( $_GET['key'] == $_COOKIE['key'] ){
+                      $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+                      $dbc->query( "SET CHARSET utf8" );
+                                      
+                      $query = "SELECT * FROM orders WHERE order_id = ' ". $_GET['order_id'] ." ' ";
+                      $data = mysqli_query($dbc, $query);
+                      $row = mysqli_fetch_array($data);                      
                       
-                      $query = "UPDATE users SET balance = balance - '$cost' WHERE user_id = '". $_SESSION['user_id'] ."'";
-                      mysqli_query($dbc, $query);
+                      $order_id = $row['order_id'];
+                      $seller_id = $row['seller_id'];
                       
+                      $query = "SELECT cost FROM product WHERE product_id = ' ". $row['product_id'] ." ' ";
+                      $data = mysqli_query($dbc, $query);
+                      $row = mysqli_fetch_array($data);
+                                            
+                      $cost = $row['cost'];
+                                          
                       $query_seller = "UPDATE sellers SET profit = profit + '$cost' WHERE user_id = '$seller_id'";
                       mysqli_query($dbc, $query_seller);
                       
-                      $query_confirm = "UPDATE orders SET payed = 1 WHERE order_id = $order_id";
+                      $query_confirm = "UPDATE orders SET payed = 1 WHERE order_id = '$order_id'";
                       mysqli_query($dbc, $query_confirm);
                         
                       mysqli_close($dbc);
+                        
+                      setcookie('key', '', time() - (60 * 60));                      
+                      
+                      echo '<p>Заказ был успешно оплачен. </p>';
+                      echo '<br /><p><a href="basket.php">&lt;&lt; Вернуться на страницу заказов</a></p>'; 
+                      }  else {
+                      echo '<p>Заказ уже был оплачен. </p>';
+                      echo '<br /><p><a href="basket.php">&lt;&lt; Вернуться на страницу заказов</a></p>'; 
+                      }                
+                  } else {                                            
+                                          
+                      $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+                      $dbc->query( "SET CHARSET utf8" );                   
+                                                                
+                      $query = "SELECT product_id FROM orders WHERE order_id = ' ". $_GET['order_id'] ." ' ";
+                      $data = mysqli_query($dbc, $query);
+                      $row = mysqli_fetch_array($data);
+                       
+                      $query = "SELECT * FROM product WHERE product_id = ' ". $row['product_id'] ." ' ";
+                      $data = mysqli_query($dbc, $query);
+                      $row = mysqli_fetch_array($data);
+                                            
+                      $name = $row['name'];
+                      $description = $row['description'];
+                      $cost = $row['cost'];
+                      $date =$row['date'];
+                      $seller_id = $row['seller_id'];                                       
+                                                              
+                      $order_id = $_GET['order_id'];
+                      $key = rand(5, 1055);
+                      setcookie('key', $key, time() + (60 * 60));                                        
+                      
+                      mysqli_close($dbc);
+                      
+                      echo '<p>Вы уверены, что хотите оплатить заказ?</p>';
+                        echo '<table class="lef">
+                        <tr>
+                          <th>Название: </th>
+                          <td>' . $name . '</td>
+                        </tr>
+                        <tr>
+                          <th>Описание: </th>
+                          <td>' . $description . '</td>
+                        </tr>
+                        <tr>
+                          <th>Цена: </th>
+                          <td>' . $cost . '</td>
+                        </tr>
+                        <tr><th colspan="2">';
 
-                      echo '<p>Заказ на ' . $name .  ' за ' . $cost .  ' р был успешно оплачен.';
-                    }
-                    else {
-                      echo '<p class="error">Заказ не был оплачен.</p>';
-                    }
-                  }
-                  else if (isset($order_id) && isset($name) && isset($description) && isset($cost) && isset($date)) {
-                    echo '<p>Вы уверены, что хотите оплатить заказ №' . $order_id . ' ?</p>';
-                      echo '<table class="lef">
-                      <tr>
-                        <th>Название: </th>
-                        <td>' . $name . '</td>
-                      </tr>
-                      <tr>
-                        <th>Описание: </th>
-                        <td>' . $description . '</td>
-                      </tr>
-                      <tr>
-                        <th>Цена: </th>
-                        <td>' . $cost . '</td>
-                      </tr>
-                      <tr><th colspan="2">';
-
-                      echo '<form method="post" action="orderpayment.php?order_id=' . $order_id . '&amp;name='. $name . '&amp;cost='. $cost . '&amp;seller_id='. $seller_id .'">';    
-                      echo '<input type="radio" name="confirm" value="Yes" /> Да ';
-                      echo '<input type="radio" name="confirm" value="No" checked="checked" /> Нет <br />';
-                    echo '<input type="submit" value="подтвердить" name="submit" />';
-                    echo '</form></th></tr></table>';
-                  }
-
-                  echo '<br /><p><a href="basket.php">&lt;&lt; Вернуться на страницу заказов</a></p>';
-                ?>
-		              
-		<?php
-          require_once('footer.php');  
-        ?>
+                        echo '<form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+                              <input type="hidden" name="receiver" value="41001787315278">
+                              <input type="hidden" name="label" value="' . $order_id . '">
+                              <input type="hidden" name="quickpay-form" value="donate">
+                              <input type="hidden" name="targets" value="покупка товара ' . $name . '">
+                              <input type="hidden" name="sum" value="' . $cost . '" data-type="number" >
+                              <input type="hidden" name="successURL" value="http://etara.org/orderpayment.php?order_id='. $order_id .'&amp;key=' . $key . ' " >
+                              <input type="hidden" name="comment" value=" " >
+                              <input type="hidden" name="need-fio" value="false"> 
+                              <input type="hidden" name="need-email" value="false" >
+                              <input type="hidden" name="need-phone" value="false">
+                              <input type="hidden" name="need-address" value="false">
+                              <input type="radio" name="paymentType" value="PC">Яндекс.Деньгами</input>
+                              <input type="radio" name="paymentType" value="AC">Банковской картой</input>
+                              <input type="submit" name="submit-button" value="Купить">';                          
+                      echo '</form></th></tr></table>';  
+                      
+                      echo '<br /><p><a href="basket.php">&lt;&lt; Вернуться на страницу заказов</a></p>';  
+                  }                                                 
+                  require_once('footer.php');  
+                  ?>

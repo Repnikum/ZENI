@@ -53,6 +53,7 @@ if (isset($_GET['code'])) {
         file_put_contents($target, file_get_contents($userInfo['photo_big']));  // сохранение файла под названием picture.jpg
   
         $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+      $dbc->query( "SET CHARSET utf8" );
         $query = "SELECT *  FROM users WHERE social_id = '{$userInfo['uid']}' LIMIT 1" ;
         $result2 = mysqli_query($dbc, $query);
       
@@ -82,6 +83,7 @@ if (isset($_GET['code'])) {
         }
       
         $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+      $dbc->query( "SET CHARSET utf8" );
         $quer = "SELECT * FROM users WHERE social_id = '{$userInfo['uid']}' LIMIT 1" ;
         $data = mysqli_query($dbc, $quer);      
         

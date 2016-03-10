@@ -69,12 +69,6 @@
                 <?php
                   require_once('startsession.php');
                   require_once('header.php');
-                ?>
-                                
-                <?php
                   require_once('buyer_ordering.php');
+                  require_once('footer.php');  
                 ?>
-        
-		<?php
-          require_once('footer.php');  
-        ?>

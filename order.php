@@ -74,6 +74,7 @@
   require_once('connectvars.php');
 
   $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$dbc->query( "SET CHARSET utf8" );
 
   $product_id = $_GET['product_id'];
   $seller_id = $_GET['seller_id'];
@@ -102,7 +103,7 @@ if (isset($_POST['submit'])) {
         
         echo '<div id="main">	
             <div class="wrapper">
-            <h2>Ваш заказ принят в обработку.<br/><br/> Хотите ли Вы <a href="portfolio.php?order=DESC">выбрать что-нибудь ещё</a>?</h2>
+            <h2>Ваш заказ принят в обработку.<br/><br/> Хотите ли Вы <a href="portfolio.php?order=DESC">выбрать что-нибудь ещё</a> или <a href="basket.php?order=DESC">перейти в корзину</a>?</h2>
             </div></div>
             ';
         require_once('footer.php');

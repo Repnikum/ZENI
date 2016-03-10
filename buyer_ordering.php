@@ -7,6 +7,7 @@
   require_once('connectvars.php');
 
   $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$dbc->query( "SET CHARSET utf8" );
       
   $uid = $_SESSION['user_id'];
     
@@ -40,7 +41,7 @@
     }
     
     if (($row['payed'] == '0') && ($balance >= $row_product['cost'])) {
-      echo '<td><a href="orderpayment.php?order_id='. $row['order_id'] .'&amp;name=' . $row_product['name'] . '&amp;description=' . $row_product['description'] . '&amp;cost=' . $row_product['cost'] .  '&amp;date=' . $row['date'] .  '&amp;seller_id=' . $row['seller_id'] .'">оплатить заказ</a></td>';
+      echo '<td><a href="orderpayment.php?order_id='. $row['order_id'] .' ">оплатить заказ</a></td>';
     } else if (($row['payed'] == '0') && ($balance < $row_product['cost'])) {
       echo '<td>у Вас недостаточно средств для оплаты заказа</td>';
     } else if ($row['payed'] == '1') {

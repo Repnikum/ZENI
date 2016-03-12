@@ -40,8 +40,8 @@
 							<h4>навигация</h4>
                             <ul>
                               <li type="disc"><a href="index.php">главная </a></li>
-                              <li type="disc"><a href="index.php">каталог </a></li>  
-                              <li type="disc"><a href="index.php">войти </a></li>  
+                              <li type="disc"><a href="portfolio.php?order=DESC">каталог </a></li>  
+                              <li type="disc"><a href="loggin.php">войти </a></li>  
                             </ul>  
 						</div>
 						

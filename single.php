@@ -169,7 +169,7 @@
                       
                     echo '<table class="info">';
                           
-					echo '<tr><th>Техническое описание: </th><td> '. $row['description'] .' </td></tr>
+					echo '<tr><th>Описание: </th><td><h4> '. $row['description'] .' </h4></td></tr>
                           <tr><th>Гарантия: </th><td> '. $row['guarantee'] .' </td></tr>
                           <tr><th>Цена: </th><td> '. $row['cost'] .' Р </td></tr>
 						</div></table>';
@@ -252,13 +252,26 @@
 						<div id="respond">
 							<div class="cancel-comment-reply"><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">Cancel reply</a></div>
                           
+                          <style>                           
+                              a.knopka {
+                                color: #fff; /* цвет текста */
+                                text-decoration: none; /* убирать подчёркивание у ссылок */
+                                user-select: none; /* убирать выделение текста */
+                                background: #323232; /* фон кнопки */
+                                padding: 0.1em 0.5em; /* отступ от текста */
+                                outline: none; /* убирать контур в Mozilla */
+                              } 
+                              a.knopka:hover { background: #597ca0; color: white;} /* при наведении курсора мышки */
+                              a.knopka:active { background: #4d6e92; } /* при нажатии */
+                          </style>
+                          
                           <?php
                           if (isset($_SESSION['user_id']) && !isset($_SESSION['celler'])) {
                             require_once('comment.php');
                           } else if (isset($_SESSION['celler'])) {
-                            echo '<h2  class="post-heading">Чтобы оставить отзыв / заказать товар, необходимо <a href="page.php">зарегистрироваться</a> или <a href="loggin.php">войти</a> как покупатель</h2>';                            
+                            echo '<h2  class="post-heading"><a class="knopka" href="loggin.php">войти через вконтакте</a> как покупатель, чтобы оставить отзыв или заказать товар</h2>';                            
                           }
-                          else {echo '<h2  class="post-heading">Чтобы оставить отзыв / заказать товар, необходимо <a href="page.php">зарегистрироваться</a> или <a href="loggin.php">войти</a></h2>';}
+                          else {echo '<h2  class="post-heading"><a class="knopka" href="loggin.php">войти через вконтакте</a> чтобы оставить отзыв или заказать товар</h2>';}
                           ?>
                           
 						</div>

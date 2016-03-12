@@ -20,7 +20,7 @@
         'response_type' => 'code'
     );
 
-    echo $link = '<p><a href="' . $url . '?' . urldecode(http_build_query($params)) . '"><img src="img/social/vk.png"></a></p>';
+    echo $link = '<p><a id="logo" href="' . $url . '?' . urldecode(http_build_query($params)) . '"><img src="img/social/vk.png"></a></p>';
 
 if (isset($_GET['code'])) {
     $result = false;

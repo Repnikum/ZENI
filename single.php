@@ -154,14 +154,25 @@
 					</div>
                     					
 		        	<!-- конец слайдера -->
-                      
+                      <style>                           
+                              a.knopkaBUY {
+                                color: #fff; /* цвет текста */
+                                text-decoration: none; /* убирать подчёркивание у ссылок */
+                                user-select: none; /* убирать выделение текста */
+                                background: #323232; /* фон кнопки */
+                                padding: 0.1em 0.5em; /* отступ от текста */
+                                outline: none; /* убирать контур в Mozilla */
+                              } 
+                              a.knopkaBUY:hover { background: #8b1124; color: white;} /* при наведении курсора мышки */
+                              a.knopkaBUY:active { background: #c0392b; } /* при нажатии */
+                          </style>
                       <?php
 				        
                       if (isset($_SESSION['buyer']))  
                       { 
                         
                         if ($row['residue'] > 0){
-                        echo '<h2  class="post-heading"><a href="order.php?product_id='. $_GET['product_id'] . '&amp;seller_id=' . $row['seller_id'] . '">Заказать </a>'. $row['name'] .'</h2>'; 
+                        echo '<h2  class="post-heading"><a class="knopkaBUY" href="order.php?product_id='. $_GET['product_id'] . '&amp;seller_id=' . $row['seller_id'] . '">Заказать </a>'. $row['name'] .'</h2>'; 
                         } else { echo '<h2  class="post-heading">Товара '. $row['name'] .' временно нет в наличии</h2>'; }
                       
                       } 

@@ -55,7 +55,7 @@
                                 <!-- VK Widget -->
                                 <div id="vk_groups"></div>
                                 <script type="text/javascript">
-                                VK.Widgets.Group("vk_groups", {mode: 0, width: "220", height: "250", color1: '#ebebe8', color2: '2B587A', color3: '#323232'}, 20003922);
+                                VK.Widgets.Group("vk_groups", {mode: 0, width: "220", height: "250", color1: '#ebebe8', color2: '2B587A', color3: '#323232'}, 38459804);
                                 </script>
 		         			</div>
 		         		</div>
@@ -64,11 +64,13 @@
 					
 					<li class="fourth-col">
 						
-						<div class="widget-block">
+						<div class="widget-block" >
+                          <div align="right">
 							<h4>платежные системы</h4>
-							<p><img width="100" src="img/paypal.png"/></p>
+							<p><img width="100" src="img/yandex.png"/></p>
                             <p><img width="100" src="img/visa.png"/></p>
                             <p><img width="100" src="img/mastercard.png"/></p>
+                          </div>
 						</div>
 		         		
 					</li>	

@@ -300,12 +300,12 @@
 			        		<h4>другие товары</h4>
 							<ul>
                                 <?php
-                                  $query = "SELECT product_id, name FROM product";
- $dbc->query( "SET CHARSET utf8" );
-                                  $data = mysqli_query($dbc, $query); 
+                                  $query_another = "SELECT product_id, name FROM product";
+                                  $dbc->query( "SET CHARSET utf8" );
+                                  $data_another = mysqli_query($dbc, $query_another); 
 
-                                  while ($row = mysqli_fetch_array($data)) {
-                                    echo '<li class="cat-item"><a href="single.php?product_id='. $row['product_id'] .'" title="View all posts">'. $row['name'] .'</a></li>';                                    
+                                  while ($row_another = mysqli_fetch_array($data_another)) {
+                                    echo '<li class="cat-item"><a href="single.php?product_id='. $row_another['product_id'] .'" title="View all posts"><h5>'. $row_another['name'] .'</h5></a></li>';                                    
                                   }
                                   
                                   mysqli_close($dbc);

@@ -95,8 +95,8 @@
 <!-- /Yandex.Metrika counter -->
 	
 	<body lang="en">
-      
-                <?php
+                
+                  <?php
                       require_once('startsession.php');
                       require_once('header.php');
                   ?>
@@ -108,16 +108,14 @@
                   <?php
                     require_once('appvars.php');
                     require_once('connectvars.php');
-
-                    if (isset($_GET['order_id']) && isset($_GET['name']) && isset($_GET['description']) && isset($_GET['cost']) && isset($_GET['date'])) {    
+                       
                       $order_id = $_GET['order_id'];
                       $name = $_GET['name'];
                       $description = $_GET['description'];
                       $cost = $_GET['cost'];
                       $date = $_GET['date'];
                       $product_id = $_GET['product_id'];
-                    }
-
+                    
                     if (isset($_POST['submit'])) {
                       if ($_POST['confirm'] == 'Yes') {
                         $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME); 
@@ -141,7 +139,7 @@
                       }
                     }
                     else if (isset($order_id) && isset($name) && isset($description) && isset($cost) && isset($date)) {
-                      echo '<p>Вы уверены, что хотите удалить заказ №' . $order_id . ' ?</p>';
+                      echo '<p>Вы уверены, что хотите отменить заказ?</p>';
                       echo '<table class="lef">
                       <tr>
                         <th>Название: </th>
@@ -149,25 +147,64 @@
                       </tr>
                       <tr>
                         <th>Описание: </th>
-                        <td>' . $description . '</td>
+                        <td><h4>' . $description . '</h4></td>
                       </tr>
                       <tr>
                         <th>Цена: </th>
-                        <td>' . $cost . '</td>
+                        <td>' . $cost . ' Р</td>
                       </tr>
                       <tr>
                         <th>Дата: </th>
                         <td>' . $date . '</td>
                       </tr>
                       <tr><th colspan="2">';
+                      
+                      ?>
+                      
+                      <style>
+                          label {
+                              display: inline-block;
+                              cursor: pointer;
+                              position: relative;
+                              padding-left: 0px;
+                              margin-right: 0px;
+                              font-size: 13px;
+                          }
+                          
+                          label:before {
+                              content: "";
+                              display: inline-block;
 
-                      echo '<form method="post" action="buyer_orderremove.php?order_id=' . $order_id .  '&amp;name='. $name .  '&amp;product_id='. $product_id .'">';    
+                              width: 16px;
+                              height: 16px;
+
+                              margin-right: 10px;
+                              position: absolute;
+                              left: 0;
+                              bottom: 1px;
+                              background-color: #aaa;
+                              box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+                          }
+                          .radio label:before {
+                              border-radius: 8px;
+                          }
+                          input[type=radio]:checked + label:before {
+                              content: "\2022";
+                              color: #f3f3f3;
+                              font-size: 30px;
+                              text-align: center;
+                              line-height: 18px;
+                          }
+
+                      </style>
+                      
+                      <?php                      
+                      echo '<form enctype="multipart/form-data" method="post" action="buyer_orderremove.php?order_id=' . $order_id .  '&amp;name='. $name .  '&amp;product_id='. $product_id .' id="commentform"">';
                       echo '<input type="radio" name="confirm" value="Yes" /> Да ';
-                      echo '<input type="radio" name="confirm" value="No" checked="checked" /> Нет <br />';
+                      echo '<input type="radio" name="confirm" value="No" checked="checked" /> Нет ';
                       echo '<input type="submit" value="подтвердить" name="submit" />';
                       echo '</form></th></tr></table>';
                     }
-
                     echo '<br /><p><a href="basket.php">&lt;&lt; Вернуться в корзину</a></p>';
                   ?>
 		<?php

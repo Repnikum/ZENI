@@ -209,7 +209,6 @@ if (isset($_POST['submit'])) {
           <label for="email">Email</label>
        ';    
         }
-        
       ?>  
     </fieldset>
     <input type="submit" value="заказать" name="submit" />

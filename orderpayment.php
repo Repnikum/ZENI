@@ -175,7 +175,7 @@
                         </tr>
                         <tr>
                           <th>Описание: </th>
-                          <td><h5>' . $description . '</h5></td>
+                          <td><h4>' . $description . '</h4></td>
                         </tr>
                         <tr>
                           <th>Цена: </th>

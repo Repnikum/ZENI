@@ -105,20 +105,20 @@
         <!-- slider holder -->
         <div id="slider-holder" class="clearfix">
 
-          <!-- slider -->
+           <!-- slider -->
           <div class="flexslider home-slider">
             <ul class="slides">
               <li>
                 <img src="img/slides/01.jpg" alt="alt text" />
-                <p class="flex-caption">Весь декабрь!</p>
+                <p class="flex-caption">Регистрация в один клик</p>
               </li>
               <li>
                 <img src="img/slides/02.jpg" alt="alt text" />
-                <p class="flex-caption">Успейте!</p>
+                <p class="flex-caption">Импортные товары</p>
               </li>
               <li>
                 <img src="img/slides/03.jpg" alt="alt text" />
-                <p class="flex-caption">Резкое падение цен!</p>
+                <p class="flex-caption">Антикризисные цены</p>
               </li>
             </ul>
           </div>

@@ -10,11 +10,12 @@ require_once('startsession.php');
 require_once('connectvars.php');
 
 $comment = $_POST['comment'];
-$username = $_SESSION['username'];
+$user_id = $_SESSION['user_id'];
 $product_id = $_GET['product_id'];
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-$query = "INSERT INTO comment (username, product_id, date, description) VALUES ('$username', '$product_id', NOW(), '$comment')";
+  $dbc->query( "SET CHARSET utf8" );
+$query = "INSERT INTO comment (user_id, product_id, date, description) VALUES ('$user_id', '$product_id', NOW(), '$comment')";
 mysqli_query($dbc, $query);
 mysqli_close($dbc);
 } else {

@@ -92,7 +92,7 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/36018200" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 	
-	<body lang="en">
+	<body lang="en">      
       
                 <?php
                     require_once('startsession.php');
@@ -181,7 +181,7 @@
                           <td>' . $cost . '</td>
                         </tr>
                         <tr><th colspan="2">';
-
+                      
                         echo '<form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
                               <input type="hidden" name="receiver" value="41001787315278">
                               <input type="hidden" name="label" value="' . $order_id . '">
@@ -196,7 +196,7 @@
                               <input type="hidden" name="need-address" value="false">
                               <input type="radio" name="paymentType" value="PC">Яндекс.Деньгами</input>
                               <input type="radio" name="paymentType" value="AC">Банковской картой</input>
-                              <input type="submit" name="submit-button" value="Купить">';                          
+                              <input type="submit" name="submit-button" class="subm" value="Купить">';                          
                       echo '</form></th></tr></table>';  
                       
                       echo '<br /><p><a href="basket.php">&lt;&lt; Вернуться на страницу заказов</a></p>';  

@@ -195,7 +195,7 @@
                             require_once('connectvars.php');
 
                             $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);   
- $dbc->query( "SET CHARSET utf8" );
+                            $dbc->query( "SET CHARSET utf8" );
                             $query = "SELECT product_id FROM comment";
 
                             $data = mysqli_query($dbc, $query);
@@ -208,24 +208,22 @@
                                     $i++;
                                   } 
                             }                        
-                            mysqli_close($dbc);
+                            
                             echo '<h3 class="heading">КОЛИЧЕСТВО ОТЗЫВОВ: '. $i .'</h3>';
-                          ?>   
-                          
-                          <?php
-                            require_once('appvars.php');
-                            require_once('connectvars.php');
-
-                            $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);    
- $dbc->query( "SET CHARSET utf8" );
-                            $query = "SELECT username, product_id, date, description FROM comment WHERE product_id = $et ORDER BY date ASC";
+                            
+                            $query = "SELECT * FROM comment WHERE product_id = $et ORDER BY date ASC";
                             $data = mysqli_query($dbc, $query); 
-                          
-                            //далее в цикле - запрос имени по user_id
-
+                                                    
                             while ($row = mysqli_fetch_array($data)) {
-                              $uname = $row['username'];
-                              $query_picture = "SELECT avatar FROM users WHERE username = '$uname' ";
+                              $user_id = $row['user_id'];
+                              
+                              $query_name = "SELECT username FROM users WHERE user_id = '$user_id' ";
+                              $data_name = mysqli_query($dbc, $query_name);
+                              $row_name = mysqli_fetch_array($data_name);
+                                                            
+                              $uname = $row_name['username'];
+                              
+                              $query_picture = "SELECT avatar FROM users WHERE user_id ='$user_id' ";
                               $data_picture = mysqli_query($dbc, $query_picture);
                                   
                               echo '<ol class="commentlist">
@@ -234,12 +232,12 @@
                                               
                                             if (mysqli_num_rows($data_picture) == 0) { 
                                                 
-                                            echo  ' <img alt="" src="img/avatars/joker.jpg" class="avatar avatar-35 photo" height="35" width="35" /><div class="comment-author vcard">'. $row['username'] .'</div>' ;
+                                            echo  ' <img alt="" src="img/avatars/joker.jpg" class="avatar avatar-35 photo" height="35" width="35" /><div class="comment-author vcard">'. $uname .'</div>' ;
                                                 
                                               } else { 
                                                 
                                               while ($row_picture = mysqli_fetch_array($data_picture)) {
-                                            echo  '<img alt="" src="img/avatars/'. $row_picture['avatar'] .'" class="avatar avatar-35 photo" height="35" width="35" /><div class="comment-author vcard">'. $row['username'] .'</div>' ;
+                                            echo  '<img alt="" src="img/avatars/'. $row_picture['avatar'] .'" class="avatar avatar-35 photo" height="35" width="35" /><div class="comment-author vcard">'. $uname .'</div>' ;
                                               }
                                                 
                                               }

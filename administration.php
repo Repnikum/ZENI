@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8"/>
-		<title>ETARA</title>
+		<title>ETARA - Администрирование</title>
   
         <link rel="shortcut icon" href="img/mini.png" type="image/png">
 		

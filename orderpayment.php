@@ -3,7 +3,8 @@
 
 	<head>
 		<meta charset="utf-8"/>
-		<title>ZENI</title>
+		<title>ETARA - Оплата заказа</title>
+      <link rel="shortcut icon" href="img/mini.png" type="image/png">
 		
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -174,7 +175,7 @@
                         </tr>
                         <tr>
                           <th>Описание: </th>
-                          <td>' . $description . '</td>
+                          <td><h5>' . $description . '</h5></td>
                         </tr>
                         <tr>
                           <th>Цена: </th>

@@ -155,7 +155,7 @@
                       </tr>
                       <tr><th colspan="2">';
 
-                      echo '<form method="post" action="orderremove.php?order_id=' . $order_id .  '&amp;name='. $name .'">';    
+                      echo '<form method="post" action="orderremove.php?order_id=' . $order_id .  '&amp;name='. $name .'" id="commentform">';    
                       echo '<input type="radio" name="confirm" value="Yes" /> Да ';
                       echo '<input type="radio" name="confirm" value="No" checked="checked" /> Нет <br />';
                       echo '<input type="submit" value="подтвердить" name="submit" />';

@@ -3,9 +3,9 @@
 
 	<head>
 		<meta charset="utf-8"/>
-		<title>ETARA</title>
+		<title>ETARA - Страница товара</title>
   
-  <link rel="shortcut icon" href="img/mini.png" type="image/png">
+        <link rel="shortcut icon" href="img/mini.png" type="image/png">
 		
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

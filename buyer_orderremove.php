@@ -199,7 +199,7 @@
                       </style>
                       
                       <?php                      
-                      echo '<form enctype="multipart/form-data" method="post" action="buyer_orderremove.php?order_id=' . $order_id .  '&amp;name='. $name .  '&amp;product_id='. $product_id .' id="commentform"">';
+                      echo '<form enctype="multipart/form-data" method="post" action="buyer_orderremove.php?order_id=' . $order_id .  '&amp;name='. $name .  '&amp;product_id='. $product_id .' " id="commentform">';
                       echo '<input type="radio" name="confirm" value="Yes" /> Да ';
                       echo '<input type="radio" name="confirm" value="No" checked="checked" /> Нет ';
                       echo '<input type="submit" value="подтвердить" name="submit" />';

@@ -140,13 +140,13 @@
 						  <ul class="slides">
                       <?php
                         echo  '<li>' .
-                                  '<a href="img/dummies/' . $row['picture'] .'" data-rel="prettyPhoto"><img src="img/dummies/' . $row['picture'] .'" alt="alt text" /></a>' .
+                                  '<a href="img/dummies/' . $row['picture'] .'" data-rel="prettyPhoto"><img src="img/dummies/' . $row['picture'] .'" alt="' . $row['name'] .'" /></a>' .
                               '</li>' .
                               '<li>' .
-                                  '<a href="img/dummies/' . $row['picone'] .'" data-rel="prettyPhoto"><img src="img/dummies/' . $row['picone'] .'" alt="alt text" /></a>' .
+                                  '<a href="img/dummies/' . $row['picone'] .'" data-rel="prettyPhoto"><img src="img/dummies/' . $row['picone'] .'" alt="' . $row['name'] .'" /></a>' .
                               '</li>' .
                               '<li>' .
-                                  '<a href="img/dummies/' . $row['pictwo'] .'" data-rel="prettyPhoto"><img src="img/dummies/' . $row['pictwo'] .'" alt="alt text" /></a>' .
+                                  '<a href="img/dummies/' . $row['pictwo'] .'" data-rel="prettyPhoto"><img src="img/dummies/' . $row['pictwo'] .'" alt="' . $row['name'] .'" /></a>' .
                               '</li>';
                       ?>
                           </ul>

@@ -55,7 +55,7 @@
                                 <!-- VK Widget -->
                                 <div id="vk_groups"></div>
                                 <script type="text/javascript">
-                                VK.Widgets.Group("vk_groups", {mode: 0, width: "220", height: "250", color1: '#ebebe8', color2: '2B587A', color3: '#323232'}, 38459804);
+                                VK.Widgets.Group("vk_groups", {mode: 0, width: "220", height: "250", color1: '#ebebe8', color2: '2B587A', color3: '#323232'}, 57871311);
                                 </script>
 		         			</div>
 		         		</div>
@@ -79,6 +79,7 @@
 				
 				<div class="footer-bottom">
 					<div class="left">© 2016 ETARA trade </div>
+                 
 					<div class="right">
 						<ul id="social-bar">
                           <!-- СОЦСЕТИ
@@ -88,6 +89,9 @@
                             <li><a href="" title="Подписаться на канал" class="poshytip"><img src="img/social/youtube.png"  alt="Youtube" /></a></li>
                           -->
 							<li><a href="https://github.com/Repnikum/ZENI"  title="Исходный код" class="poshytip"><img src="img/social/github.png" alt="Google plus" /></a></li>
+                         <li><a href="https://ru-ru.facebook.com"  title="Become a fan" class="poshytip"><img src="img/social/facebook.png"  alt="Facebook" /></a></li>
+							<li><a href="https://twitter.com" title="Follow my tweets" class="poshytip"><img src="img/social/twitter.png"  alt="twitter" /></a></li>
+							                         
 						</ul>
 					</div>
 				</div>

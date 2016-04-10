@@ -1,4 +1,3 @@
-
 <header class="clearfix">
 			<div class="wrapper clearfix">
 				<nav>
@@ -9,6 +8,7 @@
                         echo '<li><a href="index.php">ГЛАВНАЯ</a>
                                     <ul>
                                       <li><a href="basket.php">КОРЗИНА</a></li>
+                                      <li><a href="balance.php">БАЛАНС</a></li>
 							       </ul>                      
                               </li>';
                         echo '<li><a href="portfolio.php?order=DESC">КАТАЛОГ</a>

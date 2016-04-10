@@ -122,7 +122,7 @@
                 </tr>
                 <tr>
                   <th>Имя: </th>
-                  <td>' . $row['name'] .'</td>
+                  <td>' . $row['username'] .'</td>
                 </tr>
                 <tr>
                   <th>Дата регистрации: </th>

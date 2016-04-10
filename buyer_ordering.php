@@ -20,7 +20,7 @@ $dbc->query( "SET CHARSET utf8" );
   $balance = $row_user['balance'];
 
   echo '<table class="new">';
-  echo '<tr><th>название</th><th>цена</th><th>дата</th><th>получение</th><th>статус</th><th>оплата</th><th>отмена</th></tr>';
+  echo '<tr><th>название</th><th>цена</th><th>дата</th><th>получение</th><th>оплата</th><th>отмена</th></tr>';
     
   while ($row = mysqli_fetch_array($data)) {
     if (!$row['archive'] == 1){
@@ -34,16 +34,8 @@ $dbc->query( "SET CHARSET utf8" );
     echo '<td>' . $row['date'] . '</td>';
     echo '<td>' . $row['getting'] . '</td>';
     
-    if ($row['approved'] == '0') {
-      echo '<td>заказ не подтвержден продавцом</td>';
-    } else if ($row['approved'] == '1') {
-      echo '<td>заказ принят в обработку</td>';
-    }
-    
-    if (($row['payed'] == '0') && ($balance >= $row_product['cost'])) {
-      echo '<td><a href="orderpayment.php?order_id='. $row['order_id'] .' ">оплатить заказ</a></td>';
-    } else if (($row['payed'] == '0') && ($balance < $row_product['cost'])) {
-      echo '<td>у Вас недостаточно средств для оплаты заказа</td>';
+    if (($row['payed'] == '0')) {
+      echo '<td><a href="orderpayment.php?order_id='. $row['order_id'] .' ">оплатить заказ</a></td>';  
     } else if ($row['payed'] == '1') {
       echo '<td>заказ оплачен</td>';
     }

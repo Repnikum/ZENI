@@ -181,7 +181,7 @@
                     echo '<table class="info">';
                           
 					echo '<tr><th>Описание: </th><td><h4> '. $row['description'] .' </h4></td></tr>
-                    <tr><th>Характеристики: </th><td align="left"><h5> '. $row['params'] .' </h5></td></tr>
+                          <tr><th>Характеристики: </th><td align="left"><h5> '. $row['params'] .' </h5></td></tr>
                           <tr><th>Гарантия: </th><td> '. $row['guarantee'] .' </td></tr>
                           <tr><th>Цена: </th><td> '. $row['cost'] .' Р </td></tr>
 						</div></table>';

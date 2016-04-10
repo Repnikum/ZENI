@@ -105,7 +105,7 @@
         <!-- slider holder -->
         <div id="slider-holder" class="clearfix">
 
-           <!-- slider -->
+          <!-- slider -->
           <div class="flexslider home-slider">
             <ul class="slides">
               <li>
@@ -128,8 +128,8 @@
 
           <!-- Headline -->
           <div id="headline">
-            <h1>Недорогой интернет магазин</h1>
-            <p>Товары с Aliexpress и Taobao уже<br /> в Санкт-Петербурге</p>
+            <h1>Магазин заказов</h1>
+            <p>заказчики, заказы, закупки, выдача и оплата заказов, отчетность</p>
             <em id="corner"></em>
           </div>
           <!-- ENDS headline -->

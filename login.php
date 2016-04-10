@@ -107,10 +107,11 @@
 <!--      <input type="submit" value="войти как продавец" id="submitCEL" name="submitCEL" />  -->
   </form>
     <?php
+     echo '</td></tr><tr><td><h3>покупателям</h3>';
     require_once('indexVKbuy.php');
     
-  /*  echo '</td></tr><tr><td><h3>продавцам</h3>';
-    require_once('indexVKcel.php'); */
+   echo '</td></tr><tr><td><h3>продавцам</h3>';
+    require_once('indexVKcel.php');
     echo '</td></tr></table>';
   }
   else {

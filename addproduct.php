@@ -1,3 +1,18 @@
+<script type="text/javascript">
+       function f() {
+      var text = document.getElementById('params');
+      var content = text.value;
+      var dlina = content.length;
+      if(dlina > 2048)
+           text.value = content.substr(0,2048);
+      var poyasn = document.getElementById('d');
+      var ostalos = 2048 - dlina;
+      if(ostalos < 0 )
+       ostalos = 0;
+      poyasn.innerHTML = 'Осталось символов ' + ostalos;
+      }
+ </script>
+
 <?php
   require_once('appvars.php');
   require_once('connectvars.php');
@@ -5,10 +20,13 @@
   if (isset($_POST['submit'])) {
     // Connect to the database
     $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+      $dbc->query( "SET CHARSET utf8" );
 
     // Grab the score data from the POST
-    $name = mysqli_real_escape_string($dbc, trim($_POST['name']));
+    $name = mysqli_real_escape_string($dbc, trim($_POST['name'])); 
+    $residue = mysqli_real_escape_string($dbc, trim($_POST['residue']));
     $description = mysqli_real_escape_string($dbc, trim($_POST['description']));
+    $params = mysqli_real_escape_string($dbc, trim($_POST['params']));
     $cost = mysqli_real_escape_string($dbc, trim($_POST['cost']));
     $guarantee = mysqli_real_escape_string($dbc, trim($_POST['guarantee']));
     $picture = mysqli_real_escape_string($dbc, trim($_FILES['picture']['name']));
@@ -25,9 +43,9 @@
     $email = mysqli_real_escape_string($dbc, trim($_POST['email']));
     
     $query_user = "UPDATE sellers SET `email`='$email', `phone`='$phone' WHERE `user_id`='". $_SESSION['user_id'] ."'";
-    mysqli_query($dbc, $query);
+    mysqli_query($dbc, $query_user);
             
-      if (!empty($name) && !empty($description) && is_numeric($cost) && !empty($guarantee) && !empty($picture) && !empty($picone) && !empty($pictwo)) {
+      if (!empty($name) && !empty($description) && is_numeric($cost) && !empty($guarantee) && !empty($picture) && !empty($picone) && !empty($pictwo) && !empty($params)  && !empty($residue)) {
         if ((($picture_type == 'image/gif') || ($picture_type == 'image/jpeg') || ($picture_type == 'image/pjpeg') || ($picture_type == 'image/png')) && ($picture_size > 0) && ($picture_size <= GW_MAXFILESIZE)
            && (($picone_type == 'image/gif') || ($picone_type == 'image/jpeg') || ($picone_type == 'image/pjpeg') || ($picone_type == 'image/png')) && ($picone_size > 0) && ($picone_size <= GW_MAXFILESIZE)
            && (($pictwo_type == 'image/gif') || ($pictwo_type == 'image/jpeg') || ($pictwo_type == 'image/pjpeg') || ($pictwo_type == 'image/png')) && ($pictwo_size > 0) && ($pictwo_size <= GW_MAXFILESIZE)
@@ -40,15 +58,16 @@
             if (move_uploaded_file($_FILES['picture']['tmp_name'], $target) && move_uploaded_file($_FILES['picone']['tmp_name'], $targetone) && move_uploaded_file($_FILES['pictwo']['tmp_name'], $targettwo)) {
               $uid = $_SESSION['user_id'];
               
-              $query = "INSERT INTO product (name, description, cost, guarantee, picture, picone, pictwo, seller_id) VALUES ('$name', '$description', '$cost', '$guarantee', '$picture', '$picone', '$pictwo', '$uid')";
+              $query = "INSERT INTO product (name, description, params, cost, guarantee, picture, picone, pictwo, seller_id, residue) VALUES ('$name', '$description', '$params', '$cost', '$guarantee', '$picture', '$picone', '$pictwo', '$uid', '$residue')";
               mysqli_query($dbc, $query);
 
               echo '<div id="main">';
               echo '<h2>Новый товар добавлен!</h2><br/><h3><a href="index.php">вернуться на главную</a></h3>';
-              echo '</div></div>';
+              echo '</div>'; 
               
               $name = "";
               $description = "";
+              $params = "";
               $cost = "";
               $guarantee = "";
               $picture = "";
@@ -87,11 +106,20 @@
     <input type="text" id="name" name="name" value="" tabindex="1" />
     <label for="name">Наименование</label>
     <br />
+    
+    <input type="text" id="residue" name="residue" value="1" />
+    <label for="name">Количество</label>
+    <br />
 
     <input type="text" id="description" name="description" value="" tabindex="2" />
     <label for="description">Описание</label>
     <br />
-
+    
+    <label for="params">Характеристики</label>
+    <h5><p id= "d">Осталось символов 2048</p></h5>
+    <textarea name="params" onclick="f()" onkeyup="f()" onKeyDown="f()" id="params"  tabindex="1"></textarea>
+    <br />
+    
     <input type="text" id="cost" name="cost" value="" tabindex="3" />
     <label for="cost">Цена</label>
     <br />
@@ -115,6 +143,7 @@
     <?php    echo '<p class="error">Фото должно быть GIF, JPEG, или PNG формата не больше, чем ' . (GW_MAXFILESIZE / 1024000) . ' Мб</p>'; 
   
     $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+  $dbc->query( "SET CHARSET utf8" );
     $query = "SELECT * FROM sellers WHERE user_id = '". $_SESSION['user_id'] ."'";
     $data = mysqli_query($dbc, $query);
     $row = mysqli_fetch_array($data);

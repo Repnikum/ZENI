@@ -10,7 +10,7 @@
 
     $client_id = '5195426'; // ID приложения
     $client_secret = 'IwxgDT5XxJrM6UjEaXA0'; // Защищённый ключ
-    $redirect_uri = 'http://localhost/www/zeni-files/indexVKcel.php'; // Адрес сайта
+    $redirect_uri = 'http://etara.org/studyproject/indexVKcel.php'; // Адрес сайта
 
     $url = 'http://oauth.vk.com/authorize';
 
@@ -20,7 +20,7 @@
         'response_type' => 'code'
     );
 
-    echo $link = '<p><a href="' . $url . '?' . urldecode(http_build_query($params)) . '"><img src="img/social/vk.png"></a></p>';
+    echo $link = '<p><a id="logo" href="' . $url . '?' . urldecode(http_build_query($params)) . '"><img src="img/social/vk.png"></a></p>';
 
 if (isset($_GET['code'])) {
     $result = false;
@@ -53,6 +53,7 @@ if (isset($_GET['code'])) {
         file_put_contents($target, file_get_contents($userInfo['photo_big']));  // сохранение файла под названием picture.jpg
   
         $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+            $dbc->query( "SET CHARSET utf8" );
         $query = "SELECT * FROM sellers WHERE social_id = '{$userInfo['uid']}' LIMIT 1" ;
         $result2 = mysqli_query($dbc, $query);
       
@@ -60,10 +61,10 @@ if (isset($_GET['code'])) {
         if (!$record) {
             $social_id = $userInfo['uid'];
             $username = $userInfo['first_name'];
-            $name = $userInfo['first_name'];
+            
             $avatar = $url['basename'];
           
-            $query = "INSERT INTO sellers (username, social_id, name, avatar) VALUES ('$username', '$social_id', '$name', '$avatar')";
+            $query = "INSERT INTO sellers (username, social_id, avatar) VALUES ('$username', '$social_id', '$avatar')";
             
             mysqli_query($dbc, $query);
           
@@ -71,10 +72,10 @@ if (isset($_GET['code'])) {
         } else {
             $social_id = $userInfo['uid'];
             $username = $userInfo['first_name'];
-            $name = $userInfo['first_name'];
+            
             $avatar = $url['basename'];
 
-            $query = "UPDATE sellers SET `username` = '$username', `name` = '$username', `avatar` = '$avatar' WHERE `social_id`='$social_id'" ;
+            $query = "UPDATE sellers SET `username` = '$username', `avatar` = '$avatar' WHERE `social_id`='$social_id'" ;
 
             mysqli_query($dbc, $query);
 
@@ -82,6 +83,7 @@ if (isset($_GET['code'])) {
         }
       
         $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+            $dbc->query( "SET CHARSET utf8" );
         $quer = "SELECT * FROM sellers WHERE social_id = '{$userInfo['uid']}' LIMIT 1" ;
         $data = mysqli_query($dbc, $quer);      
         

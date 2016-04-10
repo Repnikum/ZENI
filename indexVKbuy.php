@@ -10,7 +10,7 @@
 
     $client_id = '5195426'; // ID приложения
     $client_secret = 'IwxgDT5XxJrM6UjEaXA0'; // Защищённый ключ
-    $redirect_uri = 'http://etara.org/indexVKbuy.php'; // Адрес сайта
+    $redirect_uri = 'http://etara.org/studyproject/indexVKbuy.php'; // Адрес сайта
 
     $url = 'http://oauth.vk.com/authorize';
 
@@ -61,10 +61,10 @@ if (isset($_GET['code'])) {
         if (!$record) {
             $social_id = $userInfo['uid'];
             $username = $userInfo['first_name'];
-            $name = $userInfo['first_name'];
+           
             $avatar = $url['basename'];
           
-            $query = "INSERT INTO users (username, social_id, name, avatar) VALUES ('$username', '$social_id', '$name', '$avatar')";
+            $query = "INSERT INTO users (username, social_id, avatar) VALUES ('$username', '$social_id', '$avatar')";
             
             mysqli_query($dbc, $query);
           
@@ -72,10 +72,10 @@ if (isset($_GET['code'])) {
         } else {
             $social_id = $userInfo['uid'];
             $username = $userInfo['first_name'];
-            $name = $userInfo['first_name'];
+            
             $avatar = $url['basename'];
 
-            $query = "UPDATE users SET `username` = '$username', `name` = '$username', `avatar` = '$avatar' WHERE `social_id`='$social_id'" ;
+            $query = "UPDATE users SET `username` = '$username', `avatar` = '$avatar' WHERE `social_id`='$social_id'" ;
 
             mysqli_query($dbc, $query);
 

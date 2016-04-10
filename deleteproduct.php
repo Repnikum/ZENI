@@ -1,5 +1,6 @@
 <?php
   $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$dbc->query( "SET CHARSET utf8" );
 
   // Retrieve the score data from MySQL
   $sid = $_SESSION['user_id'];
@@ -17,8 +18,22 @@
     echo '<td>' . $row['description'] . '</td>';
     echo '<td>' . $row['cost'] . '</td>';
     echo '<td>' . $row['guarantee'] . '</td>';
-    echo '<td><a href="removescore.php?product_id=' . $row['product_id'] . '&amp;description=' . $row['description'] . '&amp;name=' . $row['name'] . '&amp;cost=' . $row['cost'] .  '&amp;guarantee=' . $row['guarantee'] . '&amp;picture=' . $row['picture'] . '">удалить</a>';
     
+    $product_id = $row['product_id'];  
+    $qery_order = "SELECT * FROM orders WHERE product_id = '$product_id'";
+    $data_order = mysqli_query($dbc, $qery_order);
+    $sum = 1;
+    
+    while ($row_order = mysqli_fetch_array($data_order)) { 
+      $sum = $sum * $row_order['archive'];
+    }
+    
+    if ($sum == 1){
+        echo '<td><a href="removescore.php?product_id=' . $row['product_id'] . '&amp;description=' . $row['description'] . '&amp;name=' . $row['name'] . '&amp;cost=' . $row['cost'] .  '&amp;guarantee=' . $row['guarantee'] . '&amp;picture=' . $row['picture'] . '">удалить</a>';
+    } else {
+        echo '<td>завершите заказы<br>на этот товар';
+    }
+           
     echo '</td></tr>';
     echo '</div>';
   }

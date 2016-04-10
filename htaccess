@@ -1,0 +1,5 @@
+DirectoryIndex index.php
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.etara.org$ [NC]
+RewriteRule ^(.*)$ http://etara.org/$1 [R=301,L]

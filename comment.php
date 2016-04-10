@@ -41,8 +41,7 @@ echo '
   <h3 class="heading">ОСТАВИТЬ ОТЗЫВ</h3>
 
 <h5><p id= "d">Осталось символов 256</p></h5>
-
-  <textarea name="comment" onclick="f()" onkeyup="f()" onKeyDown="f()" id="comment"  tabindex="1"></textarea>
+<textarea name="comment" onclick="f()" onkeyup="f()" onKeyDown="f()" id="comment"  tabindex="1"></textarea>
 
   <p><input name="submit" type="submit" id="submit" tabindex="2" value="отправить" /></p>
 </form>
